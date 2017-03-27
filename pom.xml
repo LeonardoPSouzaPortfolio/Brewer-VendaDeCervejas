@@ -4,7 +4,7 @@
   <artifactId>brewer</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Brewer</name>
-  <description>Java + Spring + Thymeleaf + Bootstrap + Responsividade</description>
+  <description>Java + Spring + Thymeleaf + Bootstrap + Maven + Responsividade</description>
   
   <packaging>war</packaging>
 	
@@ -16,10 +16,17 @@
 
 		<java.version>1.8</java.version>
 		<maven-compiler-pluging.version>3.2</maven-compiler-pluging.version>
+		
+		<!-- Spring MVC -->
+		<spring-framework.version>4.3.0.RELEASE</spring-framework.version>
+		
+		<!-- Servlet API -->
+		<servlet.version>3.1.0</servlet.version>
 	</properties>
-	
+
 	<build>
 		<plugins>
+			<!-- Plugins de copilação do Maven -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-pluging.version}</version>
@@ -30,5 +37,34 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Gerenciador de dependencia do Spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${spring-framework.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		
+		<!-- Servlet API -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
 </project>
