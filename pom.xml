@@ -4,7 +4,7 @@
   <artifactId>brewer</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Brewer</name>
-  <description>Java + Spring + Thymeleaf + Bootstrap + Maven + Log4j + Responsividade</description>
+  <description>Java + Spring + Thymeleaf + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Flyway + Responsividade</description>
   
   <packaging>war</packaging>
 	
@@ -35,6 +35,9 @@
 		<!-- Logging -->
 		<log4j.version>2.6</log4j.version>
 		<jcl-over-slf4j.version>1.7.21</jcl-over-slf4j.version>
+		
+		<!-- JPA / Hibernate -->
+		<hibernate.version>5.1.0.Final</hibernate.version>
 	</properties>
 
 	<build>
@@ -136,6 +139,22 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>${jcl-over-slf4j.version}</version>
+		</dependency>
+		
+		<!-- JPA / Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Hibernate - Java 8 support -->
+        <dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-java8</artifactId>
+    		<version>${hibernate.version}</version>
+    		<scope>compile</scope>
 		</dependency>
 		
 	</dependencies>
