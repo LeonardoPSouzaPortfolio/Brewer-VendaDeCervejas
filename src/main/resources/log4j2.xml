@@ -10,7 +10,7 @@
 	<Loggers>
 		<Logger name="com.algaworks.brewer.controller" level="error"/>
 		
-		<Logger name="org.hibernate" level="debug"/>
+		<Logger name="org.hibernate.SQL" level="debug"/>
 	
 		<Root level="error">
 			<AppenderRef ref="Console" />
