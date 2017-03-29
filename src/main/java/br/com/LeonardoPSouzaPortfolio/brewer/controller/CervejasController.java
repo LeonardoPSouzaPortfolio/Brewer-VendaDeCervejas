@@ -15,6 +15,7 @@ import br.com.LeonardoPSouzaPortfolio.brewer.model.Cerveja;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Origem;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Sabor;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Estilos;
+import br.com.LeonardoPSouzaPortfolio.brewer.service.CadastroCervejaService;
 /**
  * 
  * @author leonardops
@@ -26,6 +27,9 @@ public class CervejasController {
 	
 	@Autowired
 	private Estilos estilos;
+	
+	@Autowired
+	private CadastroCervejaService cadastroCervejaService;
 
 	/**
 	 * @RequestMapping - Mapeia o URL numa requisição GET
@@ -50,20 +54,12 @@ public class CervejasController {
 	 */
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
 	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
-		/*if (result.hasErrors()) {
+		if (result.hasErrors()) {
 			return novo(cerveja);
-		}*/
+		}
 		
-		// Salvar no banco de dados...
+		cadastroCervejaService.salvar(cerveja);
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
-		System.out.println(">>> sku: " + cerveja.getSku());
-		System.out.println(">>> sabor: " + cerveja.getSabor());
-		System.out.println(">>> Origem: " + cerveja.getOrigem());
-		
-		System.out.println("cerveja.getEstilo(): " + cerveja.getEstilo());
-		if (cerveja.getEstilo() != null)
-			System.out.println(">>> Estilo: " + cerveja.getEstilo().getCodigo());
-		
 		return new ModelAndView("redirect:/cervejas/novo");
 	}
 	
