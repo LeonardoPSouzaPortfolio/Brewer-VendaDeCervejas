@@ -21,12 +21,10 @@
 
 	<div class="container-fluid">
 
-		<!-- <div class="alert  alert-danger  alert-dismissible" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<i class="fa  fa-exclamation-circle"></i> Já existe um produto com o nome informado.
-		</div> -->
+		<th:block th:include="fragments/MensagemSucesso"></th:block>
 
 		<form method="POST" th:object="${cerveja}" class="form-vertical  js-form-loading">
+			<th:block th:include="fragments/MensagensErroValidacao"></th:block>
 	
 			<div class="row">
 				<div class="col-sm-2  form-group">
