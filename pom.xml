@@ -4,7 +4,7 @@
   <artifactId>brewer</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Brewer</name>
-  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Responsividade</description>
+  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Responsividade</description>
   
   <packaging>war</packaging>
 	
