@@ -7,6 +7,8 @@
 	
 <head>
 	<title>Cadastro de cerveja</title>
+	
+	<link rel="stylesheet" th:href="@{/stylesheets/vendors/upload.min.css}"/>
 </head>
 
 <body>
@@ -111,6 +113,18 @@
 				</div>
 			</div>
 			
+			<div class="row">
+				<div class="form-group  col-sm-12">
+					<label class="control-label">Foto</label>
+					
+					<div id="upload-drop" class="bw-upload">
+						<i class="glyphicon  glyphicon-cloud-upload"></i>
+						<span>Arraste a foto aqui ou </span>
+						<a class="bw-upload-form-file">selecione <input id="upload-select" type="file" accept=".jpg,.jpeg,.png"/></a>
+					</div>
+				</div>
+			</div>
+			
 			<div class="form-group">
 				<button class="btn  btn-primary" type="submit">Salvar</button>
 			</div>
@@ -123,6 +137,22 @@
 
 <th:block layout:fragment="javascript-extra">
 	<script th:src="@{/javascripts/estilo.cadastro-rapido.js}"></script>
+	<script th:src="@{/javascripts/vendors/uikit.min.js}"></script>
+	<script th:src="@{/javascripts/vendors/upload.min.js}"></script>
+	
+	<script>
+	$(function() {
+		var settings = {
+				type: 'json',
+				filelimit: 1,
+				allow: '*.(jpg|jpeg|png)'
+		};
+		
+		UIkit.uploadSelect($('#upload-select'), settings);
+		UIkit.uploadDrop($('#upload-drop'), settings);
+	});
+	</script>
+	
 </th:block>
 	
 </body>
