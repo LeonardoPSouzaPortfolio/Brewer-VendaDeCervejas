@@ -25,7 +25,7 @@
 			<th:block th:include="fragments/MensagensErroValidacao"></th:block>
 			
 			<div class="row">
-				<div class="form-group  col-sm-12" th:classappend="${#fields.hasErrors('nome')} ? has-error">
+				<div class="form-group  col-sm-12  bw-required" th:classappend="${#fields.hasErrors('nome')} ? has-error">
 					<label for="nome" class="control-label">Nome</label>
 					<input type="text" class="form-control" id="nome" autofocus="autofocus" th:field="*{nome}"/>
 				</div>
