@@ -113,14 +113,14 @@
 				</div>
 			</div>
 			
-						<div class="row">
+			<div class="row">
 				<div class="form-group  col-sm-12">
 					<input type="hidden" th:field="*{foto}">
 					<input type="hidden" th:field="*{contentType}">
 				
 					<label class="control-label">Foto</label>
 					
-					<div class="js-container-foto-cerveja">
+					<div class="js-container-foto-cerveja" th:attr="data-url-fotos=@{/fotos}">
 						<div id="upload-drop" class="bw-upload">
 							<i class="glyphicon  glyphicon-cloud-upload"></i>
 							<span>Arraste a foto aqui ou </span>
@@ -146,45 +146,7 @@
 	<script th:src="@{/javascripts/vendors/uikit.min.js}"></script>
 	<script th:src="@{/javascripts/vendors/upload.min.js}"></script>
 	<script th:src="@{/javascripts/vendors/handlebars.min.js}"></script>
-	
-	<script>
-	$(function() {
-		var settings = {
-				type: 'json',
-				filelimit: 1,
-				allow: '*.(jpg|jpeg|png)',
-				action: '/brewer/fotos',
-				complete: function(resposta) {
-					var inputNomeFoto = $('input[name=foto]');
-					var inputContentType = $('input[name=contentType]');
-					
-					var htmlFotoCervejaTemplate = $('#foto-cerveja').html();
-					var template = Handlebars.compile(htmlFotoCervejaTemplate);
-					var htmlFotoCerveja = template({nomeFoto: resposta.nome});
-					
-					var containerFotoCerveja = $('.js-container-foto-cerveja');
-					
-					var uploadDrop = $('#upload-drop');
-					
-					inputNomeFoto.val(resposta.nome);
-					inputContentType.val(resposta.contentType);
-					
-					uploadDrop.addClass('hidden');
-					containerFotoCerveja.append(htmlFotoCerveja);
-					
-					$('.js-remove-foto').on('click', function() {
-						$('.js-foto-cerveja').remove();
-						uploadDrop.removeClass('hidden');
-						inputNomeFoto.val('');
-						inputContentType.val('');
-					});
-				}
-		};
-		
-		UIkit.uploadSelect($('#upload-select'), settings);
-		UIkit.uploadDrop($('#upload-drop'), settings);
-	});
-	</script>
+	<script th:src="@{/javascripts/cerveja.upload-foto.js}"></script>
 	
 </th:block>
 	
