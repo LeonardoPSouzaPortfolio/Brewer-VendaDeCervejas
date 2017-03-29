@@ -4,7 +4,9 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="'layout/LayoutPadrao'">
 	
-<head></head>
+<head>
+	<title>Cadastro de cerveja</title>
+</head>
 
 <body>
 <section layout:fragment="conteudo">
@@ -49,7 +51,7 @@
 					<div class="bw-field-action">
 						<select id="estilo" class="form-control">
 							<option value="">Selecione o estilo</option>
-							<option value="1">Pale lager</option>
+							<option th:each="estilo : ${estilos}" th:value="${estilo.codigo}" th:text="${estilo.nome}">Pale lager</option>
 						</select>
 						
 						<div class="bw-field-action__icon">
@@ -64,7 +66,7 @@
 					<label for="sabor">Sabor</label>
 					<select id="sabor" class="form-control">
 						<option value="">Selecione o sabor</option>
-						<option value="1">Adocicada</option>
+						<option th:each="sabor : ${sabores}" th:value="${sabor}" th:text="${sabor.descricao}">Adocicada</option>
 					</select>
 				</div>
 				
@@ -79,14 +81,12 @@
 				<div class="col-lg-3  col-sm-6  form-group">
 					<label for="origem">Origem</label>
 					<div>
-						<div class="radio  radio-inline">
-							<input type="radio" name="origem"> 
-							<label>Nacional</label>
-						</div>
-						<div class="radio  radio-inline">
-							<input type="radio" name="origem"> 
-							<label>Internacional</label>
-						</div>
+						<th:block th:each="origem : ${origens}">
+							<div class="radio  radio-inline">
+								<input th:id="|id_${origem}|" type="radio" th:value="${origem}" name="origem"> 
+								<label th:for="|id_${origem}|" th:text="${origem.descricao}">Nacional</label>
+							</div>
+						</th:block>
 					</div>
 				</div>
 			</div>
