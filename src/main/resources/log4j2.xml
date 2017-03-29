@@ -8,7 +8,7 @@
 	</Appenders>
 	
 	<Loggers>
-		<Logger name="com.algaworks.brewer.controller" level="error"/>
+		<Logger name="br.com.LeonardoPSouzaPortfolio.brewer" level="debug"/>
 		
 		<Logger name="org.hibernate.SQL" level="debug"/>
 	
