@@ -4,7 +4,7 @@
   <artifactId>brewer</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Brewer</name>
-  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Responsividade</description>
+  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Thumbnailator + Responsividade</description>
   
   <packaging>war</packaging>
 	
@@ -46,6 +46,10 @@
 		
 		<!-- Jackson - JSON -->
 		<jackson-core.version>2.7.5</jackson-core.version>
+		
+		<!-- thumbnailator - Gerar Thumbnail -->
+ 		<!-- https://github.com/coobird/thumbnailator -->
+		<thumbnailator.version>0.4.8</thumbnailator.version>
 	</properties>
 
 	<build>
@@ -197,6 +201,15 @@
 		    <version>${jackson-core.version}</version>
 		    <scope>compile</scope>
 		</dependency>
+		
+		<!-- thumbnailator - Gerar Thumbnail -->
+		<dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>${thumbnailator.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
 		
 	</dependencies>
 

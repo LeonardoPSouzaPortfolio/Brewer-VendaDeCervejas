@@ -1,11 +1,13 @@
 package br.com.LeonardoPSouzaPortfolio.brewer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Cerveja;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Cervejas;
+import br.com.LeonardoPSouzaPortfolio.brewer.service.event.cerveja.CervejaSalvaEvent;
 
 @Service
 public class CadastroCervejaService {
@@ -13,13 +15,18 @@ public class CadastroCervejaService {
 	@Autowired
 	private Cervejas cervejas;
 	
+	@Autowired
+	private ApplicationEventPublisher publisher;
+	
 	/**
-	 * Abre uma transação
+	 * Abre uma novo transação
 	 * @param cerveja
 	 */
 	@Transactional
 	public void salvar(Cerveja cerveja) {
 		cervejas.save(cerveja);
+		
+		publisher.publishEvent(new CervejaSalvaEvent(cerveja));
 	}
 	
 }
