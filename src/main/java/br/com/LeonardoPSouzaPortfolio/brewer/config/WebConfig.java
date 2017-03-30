@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.format.number.NumberStyleFormatter;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
@@ -37,12 +38,14 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
  * @Configuration - Anotação que aponta que a classe é uma configuração
  * @ComponentScan - Anotação aponta qual é o pacote de leitura dos controller
  * @EnableWebMvc - Anotação que habilita WEB MVC no projeto
+ * @EnableSpringDataWebSupport - suporte ao SpringData
  * extends WebMvcConfigurerAdapter - Adaptador do Spring para WEB MVC
  *
  */
 @Configuration
 @ComponentScan(basePackageClasses = { CervejasController.class })
 @EnableWebMvc
+@EnableSpringDataWebSupport
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware{
 	
 	private ApplicationContext applicationContext;
