@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="'layout/LayoutPadrao'">
-
+	layout:decorator="'layout/LayoutPadrao'"
+	xmlns:brewer="https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas">
+	
 <head>
-	<title>Cadastro de estilo</title>
+	<title>Cadastro de cerveja</title>
+	
+	<link rel="stylesheet" th:href="@{/stylesheets/vendors/upload.min.css}"/>
 </head>
 
+<body>
 <section layout:fragment="conteudo">
 
 	<div class="page-header">
 		<div class="container-fluid">
-			<h1>
-				Cadastro de estilo
-			</h1>
+			<div class="row">
+				<div class="col-sm-10">
+					<h1>Cadastro de estilo</h1>
+				</div>
+			
+				<div class="col-sm-2">
+					<div class="aw-page-header-controls">
+						<a class="btn  btn-default" th:href="@{/estilos}">
+							<i class="glyphicon  glyphicon-plus-sign"></i> <span class="hidden-xs  hidden-sm">Pesquisa</span>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	

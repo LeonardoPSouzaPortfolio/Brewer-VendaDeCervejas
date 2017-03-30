@@ -1,12 +1,16 @@
 package br.com.LeonardoPSouzaPortfolio.brewer.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.LeonardoPSouzaPortfolio.brewer.controller.page.PageWrapper;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Estilo;
+import br.com.LeonardoPSouzaPortfolio.brewer.repository.Estilos;
+import br.com.LeonardoPSouzaPortfolio.brewer.repository.filter.EstiloFilter;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.CadastroEstiloService;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.exception.NomeEstiloJaCadastradoException;
 
@@ -24,6 +31,9 @@ public class EstilosController {
 
 	@Autowired
 	private CadastroEstiloService cadastroEstiloService;
+	
+	@Autowired
+	private Estilos estilos;
 	
 	@RequestMapping("/novo")
 	public ModelAndView novo(Estilo estilo) {
@@ -47,9 +57,6 @@ public class EstilosController {
 		return new ModelAndView("redirect:/estilos/novo");
 	}
 	
-	/**
-	 * @param estilo - recebe e converte um objeto JSON em Estilo
-	 */
 	@RequestMapping(method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE })
 	public @ResponseBody ResponseEntity<?> salvar(@RequestBody @Valid Estilo estilo, BindingResult result) {
 		if (result.hasErrors()) {
@@ -58,6 +65,17 @@ public class EstilosController {
 		
 		estilo = cadastroEstiloService.salvar(estilo);
 		return ResponseEntity.ok(estilo);
+	}
+	
+	@GetMapping
+	public ModelAndView pesquisar(EstiloFilter estiloFilter, BindingResult result
+			, @PageableDefault(size = 2) Pageable pageable, HttpServletRequest httpServletRequest) {
+		ModelAndView mv = new ModelAndView("estilo/PesquisaEstilos");
+		
+		PageWrapper<Estilo> paginaWrapper = new PageWrapper<>(estilos.filtrar(estiloFilter, pageable)
+				, httpServletRequest);
+		mv.addObject("pagina", paginaWrapper);
+		return mv;
 	}
 	
 }
