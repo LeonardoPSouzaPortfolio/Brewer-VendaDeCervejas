@@ -133,18 +133,18 @@
 		
 		<div class="col-sm-12  text-center" th:if="${not #lists.isEmpty(pagina.content)}">
 			<nav>
-				<ul class="pagination  pagination-sm">
-					<li class="disabled">
-						<a href="#"><span>&laquo;</span></a>
+				<ul class="pagination  pagination-sm" th:with="paginaAtual=${pagina.number}">
+					<li th:class="${pagina.first} ? disabled">
+						<a th:href="|?page=${paginaAtual - 1}|" th:remove="${pagina.first} ? tag"><span>&laquo;</span></a>
 					</li>
-					<th:block th:each="p : ${#numbers.sequence(1, pagina.totalPages)}" th:with="numeroPagina=${p - 1}, paginaAtual=${pagina.number}">
+					<th:block th:each="p : ${#numbers.sequence(1, pagina.totalPages)}" th:with="numeroPagina=${p - 1}">
 						<li th:class="${paginaAtual == numeroPagina} ? active">
 							<a th:href="|?page=${numeroPagina}|">[[${p}]]</a>
 						</li>
 					</th:block>
 					
-					<li class="disabled">
-						<a href="#"><span>&raquo;</span></a>
+					<li th:class="${pagina.last} ? disabled">
+						<a th:href="|?page=${paginaAtual + 1}|" th:remove="${pagina.last} ? tag"><span>&raquo;</span></a>
 					</li>
 				</ul>
 			</nav>
