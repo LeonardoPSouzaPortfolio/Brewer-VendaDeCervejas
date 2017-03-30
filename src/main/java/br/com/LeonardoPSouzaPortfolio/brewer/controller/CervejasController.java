@@ -17,6 +17,7 @@ import br.com.LeonardoPSouzaPortfolio.brewer.model.Origem;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Sabor;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Cervejas;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Estilos;
+import br.com.LeonardoPSouzaPortfolio.brewer.repository.filter.CervejaFilter;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.CadastroCervejaService;
 /**
  * 
@@ -71,13 +72,13 @@ public class CervejasController {
 	}
 	
 	@GetMapping
-	public ModelAndView pesquisar() {
+	public ModelAndView pesquisar(CervejaFilter cervejaFilter, BindingResult result) {
 		ModelAndView mv = new ModelAndView("cerveja/PesquisaCervejas");
 		mv.addObject("estilos", estilos.findAll());
 		mv.addObject("sabores", Sabor.values());
 		mv.addObject("origens", Origem.values());
 		
-		mv.addObject("cervejas", cervejas.findAll());
+		mv.addObject("cervejas", cervejas.filtrar(cervejaFilter));
 		return mv;
 	}
 	
