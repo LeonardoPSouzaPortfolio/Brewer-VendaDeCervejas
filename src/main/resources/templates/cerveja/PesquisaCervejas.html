@@ -97,22 +97,10 @@
 					<tr>
 						<th class="table-cervejas-col-foto"></th>
 						<th class="table-cervejas-col-sku">
-							<a th:href="${pagina.urlOrdenada('sku')}" th:remove="${pagina.vazia} ? tag">
-								<span>SKU</span>
-								<span class="dropup" th:remove="${pagina.descendente('sku')} ? tag"
-										th:if="${pagina.ordenada('sku')}">
-									<span class="caret"></span>
-								</span>
-							</a>
+							<brewer:order page="${pagina}" field="sku" text="SKU"/>
 						</th>
 						<th class="table-cervejas-col-nome">
-							<a th:href="${pagina.urlOrdenada('nome')}" th:remove="${pagina.vazia} ? tag">
-								<span>Nome</span>
-								<span class="dropup" th:remove="${pagina.descendente('nome')} ? tag"
-										th:if="${pagina.ordenada('nome')}">
-									<span class="caret"></span>
-								</span>
-							</a>
+							<brewer:order page="${pagina}" field="nome" text="Nome"/>
 						</th>
 						<th class="table-cervejas-col-estilo">Estilo</th>
 						<th class="table-cervejas-col-origem">Origem</th>
