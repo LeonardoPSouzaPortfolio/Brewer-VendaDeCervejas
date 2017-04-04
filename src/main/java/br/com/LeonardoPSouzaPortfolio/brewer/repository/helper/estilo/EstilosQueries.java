@@ -1,4 +1,4 @@
-package br.com.LeonardoPSouzaPortfolio.brewer.repository.helper.cerveja;
+package br.com.LeonardoPSouzaPortfolio.brewer.repository.helper.estilo;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

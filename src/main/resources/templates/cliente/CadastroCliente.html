@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:th="http://www.thymeleaf.org"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layout/LayoutPadrao"
-	xmlns:brewer="https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:data="http://www.thymeleaf.org/extras/data"
+	xmlns:brewer="https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas"
+	layout:decorate="layout/LayoutPadrao">
 
 <head>
 	<title>Cadastro de cliente</title>
@@ -13,9 +14,19 @@
 
 	<div class="page-header">
 		<div class="container-fluid">
-			<h1>
-				Cadastro de cliente
-			</h1>
+			<div class="row">
+				<div class="col-sm-10">
+					<h1>Cadastro de cliente</h1>
+				</div>
+			
+				<div class="col-sm-2">
+					<div class="aw-page-header-controls">
+						<a class="btn  btn-default" th:href="@{/clientes}">
+							<i class="glyphicon  glyphicon-plus-sign"></i> <span class="hidden-xs  hidden-sm">Pesquisa</span>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

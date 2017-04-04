@@ -1,4 +1,4 @@
-package br.com.LeonardoPSouzaPortfolio.brewer.repository.helper.cerveja;
+package br.com.LeonardoPSouzaPortfolio.brewer.repository.helper.estilo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
