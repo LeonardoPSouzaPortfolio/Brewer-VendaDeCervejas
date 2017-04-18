@@ -4,7 +4,7 @@
   <artifactId>brewer</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Brewer</name>
-  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Thumbnailator + Responsividade</description>
+  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Thumbnailator + Guava + Responsividade</description>
   
   <packaging>war</packaging>
 	
@@ -53,6 +53,9 @@
 		
 		<!-- Thymeleaf extras data attribute -->
 		<thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
+		
+		<!-- Cache - Guava -->
+		<guava.version>19.0</guava.version>
 	</properties>
 
 	<build>
@@ -220,6 +223,21 @@
     		<artifactId>thymeleaf-extras-data-attribute</artifactId>
     		<version>${thymeleaf-extras-data-attribute.version}</version>
     		<scope>compile</scope>
+		</dependency>
+		
+		<!-- Cache - Guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<!-- Spring Context Support (ao Guava)-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<scope>compile</scope>
 		</dependency>
 		
 		
