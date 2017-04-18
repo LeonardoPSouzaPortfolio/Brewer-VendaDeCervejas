@@ -55,7 +55,7 @@
 			</div>
 			
 			<div class="row">
-				<div class="form-group  col-sm-3" brewer:classforerror="senha">
+				<div class="form-group  col-sm-3" brewer:classforerror="senha" th:classappend="${usuario.novo} ? bw-required">
 					<label for="senha" class="control-label">Senha</label> 
 					<input type="password" class="form-control" id="senha" th:field="*{senha}"/>
 				</div>

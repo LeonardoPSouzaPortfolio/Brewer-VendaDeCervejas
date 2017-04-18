@@ -14,6 +14,7 @@ import br.com.LeonardoPSouzaPortfolio.brewer.model.Usuario;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Grupos;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.CadastroUsuarioService;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.exception.EmailUsuarioJaCadastradoException;
+import br.com.LeonardoPSouzaPortfolio.brewer.service.exception.SenhaObrigatoriaUsuarioException;
 
 @Controller
 @RequestMapping("/usuarios")
@@ -42,6 +43,9 @@ public class UsuariosController {
 			cadastroUsuarioService.salvar(usuario);
 		} catch (EmailUsuarioJaCadastradoException e) {
 			result.rejectValue("email", e.getMessage(), e.getMessage());
+			return novo(usuario);
+		} catch (SenhaObrigatoriaUsuarioException e) {
+			result.rejectValue("senha", e.getMessage(), e.getMessage());
 			return novo(usuario);
 		}
 		
