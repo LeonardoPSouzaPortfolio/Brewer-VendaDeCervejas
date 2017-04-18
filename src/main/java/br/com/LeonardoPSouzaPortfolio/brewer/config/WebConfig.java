@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.util.Locale;
 
 import org.springframework.beans.BeansException;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -43,6 +46,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
  * @ComponentScan - Anotação aponta qual é o pacote de leitura dos controller
  * @EnableWebMvc - Anotação que habilita WEB MVC no projeto
  * @EnableSpringDataWebSupport - suporte ao SpringData
+ * @EnableCaching - suport a cache
  * extends WebMvcConfigurerAdapter - Adaptador do Spring para WEB MVC
  *
  */
@@ -50,6 +54,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 @ComponentScan(basePackageClasses = { CervejasController.class })
 @EnableWebMvc
 @EnableSpringDataWebSupport
+@EnableCaching
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware{
 	
 	private ApplicationContext applicationContext;
@@ -132,6 +137,15 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 	@Bean
 	public LocaleResolver localeResolver() {
 		return new FixedLocaleResolver(new Locale("pt", "BR"));
+	}
+	
+	/**
+	 * Salva em cache
+	 * @return
+	 */
+	@Bean
+	public CacheManager cacheManager() {
+		return new ConcurrentMapCacheManager();
 	}
 
 } 
