@@ -56,6 +56,9 @@
 		
 		<!-- Cache - Guava -->
 		<guava.version>19.0</guava.version>
+		
+		<!-- Apache Bean Utils -->
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>
 	</properties>
 
 	<build>
@@ -238,6 +241,14 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<scope>compile</scope>
+		</dependency>
+		
+		<!-- Apache Bean Utils -->
+		<dependency>
+    		<groupId>commons-beanutils</groupId>
+    		<artifactId>commons-beanutils</artifactId>
+    		<version>${commons-beanutils.version}</version>
+    		<scope>compile</scope>
 		</dependency>
 		
 		
