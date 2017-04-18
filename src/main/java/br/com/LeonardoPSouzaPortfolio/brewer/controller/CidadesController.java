@@ -2,12 +2,16 @@ package br.com.LeonardoPSouzaPortfolio.brewer.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,9 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.LeonardoPSouzaPortfolio.brewer.controller.page.PageWrapper;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Cidade;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Cidades;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Estados;
+import br.com.LeonardoPSouzaPortfolio.brewer.repository.filter.CidadeFilter;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.CadastroCidadeService;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.exception.NomeCidadeJaCadastradaException;
 
@@ -65,6 +71,18 @@ public class CidadesController {
 		
 		attributes.addFlashAttribute("mensagem", "Cidade salva com sucesso!");
 		return new ModelAndView("redirect:/cidades/nova");
+	}
+	
+	@GetMapping
+	public ModelAndView pesquisar(CidadeFilter cidadeFilter, BindingResult result
+			, @PageableDefault(size = 10) Pageable pageable, HttpServletRequest httpServletRequest) {
+		ModelAndView mv = new ModelAndView("cidade/PesquisaCidades");
+		mv.addObject("estados", estados.findAll());
+		
+		PageWrapper<Cidade> paginaWrapper = new PageWrapper<>(cidades.filtrar(cidadeFilter, pageable)
+				, httpServletRequest);
+		mv.addObject("pagina", paginaWrapper);
+		return mv;
 	}
 	
 }
