@@ -2,15 +2,24 @@ package br.com.LeonardoPSouzaPortfolio.brewer.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Cidade;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Cidades;
+import br.com.LeonardoPSouzaPortfolio.brewer.repository.Estados;
+import br.com.LeonardoPSouzaPortfolio.brewer.service.CadastroCidadeService;
+import br.com.LeonardoPSouzaPortfolio.brewer.service.exception.NomeCidadeJaCadastradaException;
 
 @Controller
 @RequestMapping("/cidades")
@@ -19,9 +28,17 @@ public class CidadesController {
 	@Autowired
 	private Cidades cidades;
 	
+	@Autowired
+	private Estados estados;
+	
+	@Autowired
+	private CadastroCidadeService cadastroCidadeService;
+	
 	@RequestMapping("/nova")
-	public String nova() {
-		return "cidade/CadastroCidade";
+	public ModelAndView nova(Cidade cidade) {
+		ModelAndView mv = new ModelAndView("cidade/CadastroCidade");
+		mv.addObject("estados", estados.findAll());
+		return mv;
 	}
 	
 	@RequestMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -31,6 +48,23 @@ public class CidadesController {
 			Thread.sleep(500);
 		} catch (InterruptedException e) {	}
 		return cidades.findByEstadoCodigo(codigoEstado);
+	}
+	
+	@PostMapping("/nova")
+	public ModelAndView salvar(@Valid Cidade cidade, BindingResult result, RedirectAttributes attributes) {
+		if (result.hasErrors()) {
+			return nova(cidade);
+		}
+		
+		try {
+			cadastroCidadeService.salvar(cidade);
+		} catch (NomeCidadeJaCadastradaException e) {
+			result.rejectValue("nome", e.getMessage(), e.getMessage());
+			return nova(cidade);
+		}
+		
+		attributes.addFlashAttribute("mensagem", "Cidade salva com sucesso!");
+		return new ModelAndView("redirect:/cidades/nova");
 	}
 	
 }
