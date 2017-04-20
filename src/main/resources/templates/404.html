@@ -5,19 +5,18 @@
 	layout:decorate="~{layout/LayoutSimples}">
 	
 <th:block layout:fragment="conteudo">
-	
 	<div class="aw-error-panel">
 		<h1 class="aw-error-panel__code">
-			<i class="fa fa-user-times"></i>
+			<i class="fa  fa-location-arrow"></i> 404
 		</h1>
 		
-		<h2 class="aw-error-panel__title">Sessão expirada</h2>
+		<h2 class="aw-error-panel__title">Página não encontrada</h2>
 		
 		<div class="aw-error-panel__description">
-			Essa sessão expirou! <br>
-			Possivel acesso de logins concorrentes.
+			Desculpe, a página que você tentou acessar não foi encontrada ou não existe. 
+			Verifique se a URL está correta ou entre em contato com a gente se precisar de ajuda.
 			<br/><br/>
-			<a th:href="@{/logout}" class="btn  btn-primary">Tentar novamente</a>
+			<a href="javascript:history.back()" class="btn  btn-primary">Voltar para onde estava</a>
 		</div>
 	</div>
 
