@@ -22,4 +22,9 @@ public class SegurancaController {
 		return "403";
 	}
 	
+	@GetMapping("/expire")
+	public String sessaoExpirada() {
+		return "expire";
+	}
+	
 }
