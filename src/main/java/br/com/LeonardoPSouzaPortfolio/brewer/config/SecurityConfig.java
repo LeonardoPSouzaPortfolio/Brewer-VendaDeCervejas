@@ -44,12 +44,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	/**
-	 * configuração de autenticação
+	 * configuração de autenticação e permissões
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
+				.antMatchers("/cidades/nova").hasRole("CADASTRAR_CIDADE")
+				.antMatchers("/usuarios/**").hasRole("CADASTRAR_USUARIO")
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
