@@ -65,6 +65,7 @@
 	            	<tr>
 	            		<th>Nome</th>
 	                	<th>E-mail</th>
+	                	<th>Grupo</th>
 	                	<th>Status</th>
 	                 	<th class="table-col-acoes"></th>
 					</tr>
@@ -74,6 +75,9 @@
 					<tr th:each="usuario : ${usuarios}">
 						<td th:text="${usuario.nome}"></td>
 						<td th:text="${usuario.email}"></td>
+						<td>
+							<span th:each="grupo : ${usuario.grupos}" th:text="|${grupo.nome}${grupoStat.last ? '' : ', '}|"></span>
+						</td>
 						<td th:text="${usuario.ativo} ? Ativo : Inativo"></td>
 	                 	<td class="text-center">
 							<a class="btn  btn-link  btn-xs" title="Editar"> 
