@@ -3,8 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout/LayoutPadrao}"
-	xmlns:brewer="http://brewer.algaworks.com">
-
+	xmlns:brewer="https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas">
 <head>
 	<title>Cadastro de venda</title>
 </head>
@@ -64,11 +63,14 @@
 					<div class="input-group">
 				      <input id="nomeCliente" type="text" readonly="readonly" class="form-control" placeholder="Clique na lupa para pesquisar o cliente"/>
 				      <span class="input-group-btn">
-				        <button class="btn  btn-default  js-tooltip" type="button" title="Pesquisa avançada">
+				        <button class="btn  btn-default  js-tooltip" type="button" title="Pesquisa avançada"
+				        		data-toggle="modal" data-target="#pesquisaRapidaClientes" >
 				        	<i class="glyphicon  glyphicon-search"></i>
 				        </button>
 				      </span>
 				    </div>
+				    
+				    <th:block th:replace="cliente/PesquisaRapidaClientes :: pesquisaRapidaClientes"></th:block>
 				</div>
 				
 				<div class="form-group  col-sm-4 bw-required">
