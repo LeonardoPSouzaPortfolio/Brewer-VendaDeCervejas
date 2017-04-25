@@ -11,7 +11,7 @@
 		<tbody>
 			{{#if .}}
 				{{#each .}}
-					<tr>
+					<tr data-codigo="{{codigo}}" data-nome="{{nome}}" class="js-cliente-pesquisa-rapida">
 						<td>{{nome}}</td>
 						<td>{{telefone}}</td>
  					</tr>
