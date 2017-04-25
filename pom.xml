@@ -4,7 +4,7 @@
   <artifactId>brewer</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Brewer</name>
-  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Thumbnailator + Guava + BCrypt + Responsividade</description>
+  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Thumbnailator + Guava + BCrypt + JUnit + Responsividade</description>
   
   <packaging>war</packaging>
 	
@@ -65,6 +65,9 @@
 		
 		<!-- Thymeleaf - Extras Spring Security -->
 		<thymeleaf-extras-springsecurity.version>3.0.0.RELEASE</thymeleaf-extras-springsecurity.version>
+		
+		<!-- JUnit -->
+		<junit.version>4.12</junit.version>
 	</properties>
 
 	<build>
@@ -277,6 +280,14 @@
 		    <artifactId>thymeleaf-extras-springsecurity4</artifactId>
 		    <version>${thymeleaf-extras-springsecurity.version}</version>
 		    <scope>compile</scope>
+		</dependency>
+		
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
 		
 		
