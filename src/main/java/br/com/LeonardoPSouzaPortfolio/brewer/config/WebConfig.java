@@ -43,6 +43,7 @@ import br.com.LeonardoPSouzaPortfolio.brewer.controller.converter.CidadeConverte
 import br.com.LeonardoPSouzaPortfolio.brewer.controller.converter.EstadoConverter;
 import br.com.LeonardoPSouzaPortfolio.brewer.controller.converter.EstiloConverter;
 import br.com.LeonardoPSouzaPortfolio.brewer.controller.converter.GrupoConverter;
+import br.com.LeonardoPSouzaPortfolio.brewer.session.TabelaItensVenda;
 import br.com.LeonardoPSouzaPortfolio.brewer.thymeleaf.BrewerDialect;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 
@@ -59,7 +60,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
  *
  */
 @Configuration
-@ComponentScan(basePackageClasses = { CervejasController.class })
+@ComponentScan(basePackageClasses = { CervejasController.class, TabelaItensVenda.class })
 @EnableWebMvc
 @EnableSpringDataWebSupport
 @EnableCaching
