@@ -274,7 +274,41 @@
 	font-size: 1.6em;
 }
 
+.bw-tabela-item__painel-exclusao {
+    position: absolute;
+    top: 0;
+    right: 100000px;
+	height: 100%;
+    width: 50%;
+    
+    text-align: center;
+    padding-top: 35px;
+    
+	background-color: #f0ad4e;
+	
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.solicitando-exclusao .bw-tabela-item__painel-exclusao {
+	right: 0;
+	opacity: 1;
+}
+
+.bw-tabela-item__titulo-exclusao {
+    display: block;
+    margin-bottom: 5px;
+    
+	color: #fff;
+    font-size: 1.3em;
+}
+
 @media (min-width: 768px) { /* screen-sm-min */
+	.bw-tabela-item__painel-exclusao {
+		width: 40%;
+		padding-top: 10px;
+	}
+	
 	.bw-tabela-item__coluna {
 		float: left;
 		margin-left: 0px;
