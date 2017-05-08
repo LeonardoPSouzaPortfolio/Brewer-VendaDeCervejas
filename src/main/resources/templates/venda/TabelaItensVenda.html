@@ -26,8 +26,13 @@
 		
 		<div class="bw-tabela-item__painel-exclusao">
 			<span class="bw-tabela-item__titulo-exclusao">Excluir este item da venda?</span>
-			<button type="button" class="btn  btn-danger">Sim, excluir!</button>
+			<button type="button" class="btn  btn-danger  js-exclusao-item-btn"
+				data:codigo-cerveja="${item.cerveja.codigo}">Sim, excluir!</button>
 		</div>
+	</div>
 	
+	<div class="bw-tabela-cervejas__vazio" th:if="${itens.empty}">
+		<i class="glyphicon  glyphicon-shopping-cart"></i> 
+		<span>Você ainda não adicionou nenhuma cerveja.</span>
 	</div>
 </html>
