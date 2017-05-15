@@ -12,6 +12,7 @@
 }
 
 
+
 /*
 ######################
 # COMPONENTES
@@ -199,6 +200,11 @@
 .easy-autocomplete-container ul li {
 	font-size: 1em !important;
 	padding: 0px 5px !important;
+}
+
+/* Box */
+.negativo .aw-box__value {
+	color: red;
 }
 
 /* Tabela Item */
