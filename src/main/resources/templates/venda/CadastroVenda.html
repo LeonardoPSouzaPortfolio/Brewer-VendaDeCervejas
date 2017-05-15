@@ -26,6 +26,7 @@
 	
 	<div class="container-fluid">
 		<form method="POST" th:action="@{/vendas/nova}">
+			<input type="hidden" id="uuid" th:value="${uuid}"/>
 			
 			<div class="row">
 				<div class="col-sm-4">
