@@ -2,7 +2,11 @@ package br.com.LeonardoPSouzaPortfolio.brewer.controller;
 
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -18,10 +22,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.LeonardoPSouzaPortfolio.brewer.controller.page.PageWrapper;
 import br.com.LeonardoPSouzaPortfolio.brewer.controller.validator.VendaValidator;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Cerveja;
+import br.com.LeonardoPSouzaPortfolio.brewer.model.StatusVenda;
+import br.com.LeonardoPSouzaPortfolio.brewer.model.TipoPessoa;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Venda;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Cervejas;
+import br.com.LeonardoPSouzaPortfolio.brewer.repository.Vendas;
+import br.com.LeonardoPSouzaPortfolio.brewer.repository.filter.VendaFilter;
 import br.com.LeonardoPSouzaPortfolio.brewer.security.UsuarioSistema;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.CadastroVendaService;
 import br.com.LeonardoPSouzaPortfolio.brewer.session.TabelasItensSession;
@@ -42,7 +51,10 @@ public class VendasController {
 	@Autowired
 	private VendaValidator vendaValidator;
 	
-	@InitBinder
+	@Autowired
+	private Vendas vendas;
+	
+	@InitBinder("venda")
 	public void inicializarValidador(WebDataBinder binder) {
 		binder.setValidator(vendaValidator);
 	}
@@ -124,6 +136,19 @@ public class VendasController {
 			, @PathVariable String uuid) {
 		tabelaItens.excluirItem(uuid, cerveja);
 		return mvTabelaItensVenda(uuid);
+	}
+	
+	@GetMapping
+	public ModelAndView pesquisar(VendaFilter vendaFilter,
+			@PageableDefault(size = 3) Pageable pageable, HttpServletRequest httpServletRequest) {
+		ModelAndView mv = new ModelAndView("/venda/PesquisaVendas");
+		mv.addObject("todosStatus", StatusVenda.values());
+		mv.addObject("tiposPessoa", TipoPessoa.values());
+		
+		PageWrapper<Venda> paginaWrapper = new PageWrapper<>(vendas.filtrar(vendaFilter, pageable)
+				, httpServletRequest);
+		mv.addObject("pagina", paginaWrapper);
+		return mv;
 	}
 	
 	private ModelAndView mvTabelaItensVenda(String uuid) {
