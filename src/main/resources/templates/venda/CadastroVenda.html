@@ -25,7 +25,7 @@
 	</div>
 	
 	<div class="container-fluid">
-		<form method="POST" th:object="${venda}" th:action="@{/vendas/novaa}">
+		<form method="POST" th:action="@{/vendas/nova}" th:object="${venda}">
 			<brewer:message/>
 		
 			<input type="hidden" id="uuid" th:field="*{uuid}"/>
@@ -36,7 +36,7 @@
 						<div class="aw-box__icon">
 							<i class="fa  fa-usd  fa-3x"></i>
 						</div>
-						<div class="aw-box__value">R$<span class="js-valor-total-box">0,00</span></div>
+						<div class="aw-box__value">R$<span class="js-valor-total-box" th:text="${{venda.valorTotal}}">0,00</span></div>
 						<div class="aw-box__title">Total</div>
 					</div>
 				</div>
@@ -65,10 +65,11 @@
 			</div>
 
 			<div class="row">
-				<div class="form-group  col-sm-4  bw-required">
+				<div class="form-group  col-sm-4  bw-required" brewer:classforerror="cliente.codigo">
 					<label class="control-label" for="nomeCliente">Cliente</label>
 					<div class="input-group">
-				      <input id="nomeCliente" type="text" readonly="readonly" class="form-control" placeholder="Clique na lupa para pesquisar o cliente"/>
+				      <input id="nomeCliente" type="text" readonly="readonly" class="form-control" th:field="*{cliente.nome}" 
+				      	placeholder="Clique na lupa para pesquisar o cliente"/>
 				      <input id="codigoCliente" type="hidden" th:field="*{cliente}"/>
 				      <span class="input-group-btn">
 				        <button class="btn  btn-default  js-tooltip" type="button" title="Pesquisa avançada"
@@ -83,7 +84,7 @@
 					<label class="control-label" for="valorFrete">Valor do frete</label>
 					<div class="input-group">
 	      				<div class="input-group-addon">R$</div> 
-						<input type="text" maxlength="14" class="form-control  js-decimal" id="valorFrete" th:field="*{valorFrete}"/>
+						<input type="text" maxlength="14" class="form-control  js-decimal" id="valorFrete" th:field="*{valorFrete}" data:valor="${valorFrete}"/>
 					</div>
 				</div>
 				
@@ -91,7 +92,7 @@
 					<label class="control-label" for="valorDesconto">Valor do desconto</label>
 					<div class="input-group">
 	      				<div class="input-group-addon">R$</div> 
-						<input type="text" maxlength="14" class="form-control  js-decimal" id="valorDesconto" th:field="*{valorDesconto}"/>
+						<input type="text" maxlength="14" class="form-control  js-decimal" id="valorDesconto" th:field="*{valorDesconto}" data:valor="${valorDesconto}"/>
 					</div>
 				</div>
 			</div>
@@ -116,17 +117,14 @@
 						</div>
 					</div>
 					
-					<div class="bw-tabela-cervejas  js-tabela-cervejas-container">
-						<div class="bw-tabela-cervejas__vazio">
-							<i class="glyphicon  glyphicon-shopping-cart"></i> 
-							<span>Você ainda não adicionou nenhuma cerveja.</span>
-						</div>
+					<div class="bw-tabela-cervejas  js-tabela-cervejas-container" data:valor="${valorTotalItens}">
+						<th:block th:replace="venda/TabelaItensVenda"/>
 					</div>
 				</div>
 				
 				<div class="tab-pane" id="entrega">
 					<div class="row">
-						<div class="form-group  col-sm-3">
+						<div class="form-group  col-sm-3" brewer:classforerror="dataEntrega">
 							<label class="control-label" for="dataEntrega">Data da entrega</label>
 							<input type="text" class="form-control" id="dataEntrega" th:field="*{dataEntrega}"/>
 						</div>
