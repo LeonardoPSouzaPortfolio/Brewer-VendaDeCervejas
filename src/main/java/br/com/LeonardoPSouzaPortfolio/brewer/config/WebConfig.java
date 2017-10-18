@@ -22,6 +22,7 @@ import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 import org.springframework.format.number.NumberStyleFormatter;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -57,6 +58,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
  * @EnableWebMvc - Anotação que habilita WEB MVC no projeto
  * @EnableSpringDataWebSupport - suporte ao SpringData
  * @EnableCaching - suport a cache
+ * @EnableAsync  - chamada assíncrona (email)
  * extends WebMvcConfigurerAdapter - Adaptador do Spring para WEB MVC
  *
  */
@@ -65,6 +67,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 @EnableWebMvc
 @EnableSpringDataWebSupport
 @EnableCaching
+@EnableAsync 
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware{
 	
 	private ApplicationContext applicationContext;
