@@ -4,7 +4,7 @@
   <artifactId>brewer</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Brewer</name>
-  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Thumbnailator + Guava + BCrypt + JUnit + Responsividade</description>
+  <description>Java + Spring + Thymeleaf + HTML5 + CSS3 + JavaScript + jQuery + Bootstrap + Maven + SLF4j + Log4j + JPA + Hibernate + Bean Validation + Hibernate Validator + Flyway + JSON + AJAX + UIkit + Handlebars + Thumbnailator + Guava + BCrypt + JUnit + Java Mail + Responsividade</description>
   
   <packaging>war</packaging>
 	
@@ -68,6 +68,9 @@
 		
 		<!-- JUnit -->
 		<junit.version>4.12</junit.version>
+		
+		<!-- Java Mail -->
+		<javax.mail.version>1.5.6</javax.mail.version>
 	</properties>
 
 	<build>
@@ -288,6 +291,14 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- Java Mail -->
+		<dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>${javax.mail.version}</version>
+            <scope>compile</scope>
 		</dependency>
 		
 		
