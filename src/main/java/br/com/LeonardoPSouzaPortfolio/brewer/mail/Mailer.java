@@ -1,6 +1,7 @@
 package br.com.LeonardoPSouzaPortfolio.brewer.mail;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.mail.MessagingException;
@@ -27,7 +28,7 @@ import br.com.LeonardoPSouzaPortfolio.brewer.storage.FotoStorage;
 public class Mailer {
 	
 	private static Logger logger = LoggerFactory.getLogger(Mailer.class);
-	
+
 	@Autowired
 	private JavaMailSender mailSender;
 	
@@ -36,11 +37,11 @@ public class Mailer {
 	
 	@Autowired
 	private FotoStorage fotoStorage;
-
+	
 	@Async
 	public void enviar(Venda venda) {
+		Context context = new Context(new Locale("pt", "BR"));
 		
-		Context context = new Context();
 		context.setVariable("venda", venda);
 		context.setVariable("logo", "logo");
 		
@@ -61,16 +62,17 @@ public class Mailer {
 		
 		try {
 			String email = thymeleaf.process("mail/ResumoVenda", context);
+			
 			MimeMessage mimeMessage = mailSender.createMimeMessage();
 			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 			helper.setFrom("leonardo.p.desouza1994@gmail.com");
 			helper.setTo(venda.getCliente().getEmail());
-			helper.setSubject("Brewer - Venda realizada");
-			helper.setText(email,true);
+			helper.setSubject(String.format("Brewer - Venda nº %d", venda.getCodigo()));
+			helper.setText(email, true);
 			
 			helper.addInline("logo", new ClassPathResource("static/images/logo-gray.png"));
 			
-			if(adicionarMockCerveja) {
+			if (adicionarMockCerveja) {
 				helper.addInline("mockCerveja", new ClassPathResource("static/images/cerveja-mock.png"));
 			}
 			
@@ -81,10 +83,11 @@ public class Mailer {
 				byte[] arrayFoto = fotoStorage.recuperarThumbnail(foto);
 				helper.addInline(cid, new ByteArrayResource(arrayFoto), contentType);
 			}
-			
+		
 			mailSender.send(mimeMessage);
 		} catch (MessagingException e) {
-			logger.error("Erro envando e-mail");
+			logger.error("Erro enviando e-mail", e);
 		}
 	}
+	
 }

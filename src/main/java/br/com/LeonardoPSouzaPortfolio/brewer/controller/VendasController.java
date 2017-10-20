@@ -89,7 +89,7 @@ public class VendasController {
 		venda.setUsuario(usuarioSistema.getUsuario());
 		
 		cadastroVendaService.salvar(venda);
-		attributes.addFlashAttribute("mensagem", "Venda salva com sucesso");
+		attributes.addFlashAttribute("mensagem", String.format("Venda nº %d salva com sucesso", venda.getCodigo()));
 		return new ModelAndView("redirect:/vendas/nova");
 	}
 
@@ -103,7 +103,7 @@ public class VendasController {
 		venda.setUsuario(usuarioSistema.getUsuario());
 		
 		cadastroVendaService.emitir(venda);
-		attributes.addFlashAttribute("mensagem", "Venda emitida com sucesso");
+		attributes.addFlashAttribute("mensagem", String.format("Venda nº %d salva e emitida com sucesso", venda.getCodigo()));
 		return new ModelAndView("redirect:/vendas/nova");
 	}
 	
@@ -116,10 +116,10 @@ public class VendasController {
 		
 		venda.setUsuario(usuarioSistema.getUsuario());
 		
-		cadastroVendaService.salvar(venda);
+		venda = cadastroVendaService.salvar(venda);
 		mailer.enviar(venda);
 		
-		attributes.addFlashAttribute("mensagem", "Venda salva e e-mail enviado");
+		attributes.addFlashAttribute("mensagem", String.format("Venda nº %d salva com sucesso e e-mail enviado", venda.getCodigo()));
 		return new ModelAndView("redirect:/vendas/nova");
 	}
 	
