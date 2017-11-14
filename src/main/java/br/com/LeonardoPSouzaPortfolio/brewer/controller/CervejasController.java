@@ -56,8 +56,8 @@ public class CervejasController {
 	 * @RequestMapping - Mapeia o URL numa requisição GET
 	 * @return - Retorna a pagina HTML
 	 */
-	@RequestMapping("/novo")
-	public ModelAndView novo(Cerveja cerveja) {
+	@RequestMapping("/nova")
+	public ModelAndView nova(Cerveja cerveja) {
 		ModelAndView mv = new ModelAndView("cerveja/CadastroCerveja");
 		mv.addObject("sabores", Sabor.values());
 		mv.addObject("estilos", estilos.findAll());
@@ -66,6 +66,7 @@ public class CervejasController {
 	}
 	
 	/**
+	 * Responsável por salvar e editar
 	 * @RequestMapping - Mapeia o URL numa requisição POST
 	 * @Valid - Valida um objeto
 	 * BindingResult result - Mante os resultados
@@ -73,15 +74,15 @@ public class CervejasController {
 	 * RedirectAttributes - Para Redirect
 	 * @return - Retorna a pagina HTML
 	 */
-	@RequestMapping(value = "/novo", method = RequestMethod.POST)
-	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
+	@RequestMapping(value = { "/nova", "{\\d+}" }, method = RequestMethod.POST)
+	public ModelAndView salvar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
-			return novo(cerveja);
+			return nova(cerveja);
 		}
 		
 		cadastroCervejaService.salvar(cerveja);
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
-		return new ModelAndView("redirect:/cervejas/novo");
+		return new ModelAndView("redirect:/cervejas/nova");
 	}
 	
 	/**
@@ -126,4 +127,10 @@ public class CervejasController {
 		return ResponseEntity.ok().build();
 	}
 	
+	@GetMapping("/{codigo}")
+	public ModelAndView editar(@PathVariable("codigo") Cerveja cerveja) {
+		ModelAndView mv = nova(cerveja);
+		mv.addObject(cerveja);
+		return mv;
+	}
 }
