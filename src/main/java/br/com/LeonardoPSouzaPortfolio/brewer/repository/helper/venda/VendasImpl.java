@@ -1,7 +1,11 @@
 package br.com.LeonardoPSouzaPortfolio.brewer.repository.helper.venda;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.MonthDay;
+import java.time.Year;
+import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import br.com.LeonardoPSouzaPortfolio.brewer.model.StatusVenda;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.TipoPessoa;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Venda;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.filter.VendaFilter;
@@ -51,6 +56,38 @@ public class VendasImpl implements VendasQueries {
 		criteria.add(Restrictions.eq("codigo", codigo));
 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 		return (Venda) criteria.uniqueResult();
+	}
+	
+	@Override
+	public BigDecimal valorTotalNoAno() {
+		Optional<BigDecimal> optional = Optional.ofNullable(manager.createQuery(
+				"select sum(valorTotal) from Venda where year(dataCriacao) = :ano and status = :status"
+				, BigDecimal.class)
+				.setParameter("ano", Year.now().getValue())
+				.setParameter("status", StatusVenda.EMITIDA)
+				.getSingleResult());
+		return optional.orElse(BigDecimal.ZERO);
+	}
+	
+	@Override
+	public BigDecimal valorTotalNoMes() {
+		Optional<BigDecimal> optional = Optional.ofNullable(manager.createQuery(
+				"select sum(valorTotal) from Venda where month(dataCriacao) = :mes and status = :status"
+				, BigDecimal.class)
+				.setParameter("mes", MonthDay.now().getMonthValue())
+				.setParameter("status", StatusVenda.EMITIDA).getSingleResult());
+		return optional.orElse(BigDecimal.ZERO);
+	}
+	
+	@Override
+	public BigDecimal valorTicketMedioNoAno() {
+		Optional<BigDecimal> optional = Optional.ofNullable(manager.createQuery(
+				"select sum(valorTotal)/count(*) from Venda where year(dataCriacao) = :ano and status = :status"
+				, BigDecimal.class)
+				.setParameter("ano", Year.now().getValue())
+				.setParameter("status", StatusVenda.EMITIDA)
+				.getSingleResult());
+		return optional.orElse(BigDecimal.ZERO);
 	}
 	
 	private Long total(VendaFilter filtro) {
