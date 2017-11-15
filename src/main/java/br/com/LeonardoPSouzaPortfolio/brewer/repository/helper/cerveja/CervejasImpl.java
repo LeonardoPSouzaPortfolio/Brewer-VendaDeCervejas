@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import br.com.LeonardoPSouzaPortfolio.brewer.dto.CervejaDTO;
+import br.com.LeonardoPSouzaPortfolio.brewer.dto.ValorItensEstoque;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Cerveja;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.filter.CervejaFilter;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.paginacao.PaginacaoUtil;
@@ -40,6 +41,12 @@ public class CervejasImpl implements CervejasQueries {
 		adicionarFiltro(filtro, criteria);
 		
 		return new PageImpl<>(criteria.list(), pageable, total(filtro));
+	}
+	
+	@Override
+	public ValorItensEstoque valorItensEstoque() {
+		String query = "select new br.com.LeonardoPSouzaPortfolio.brewer.dto.ValorItensEstoque(sum(valor * quantidadeEstoque), sum(quantidadeEstoque)) from Cerveja";
+		return manager.createQuery(query, ValorItensEstoque.class).getSingleResult();
 	}
 	
 	private Long total(CervejaFilter filtro) {
