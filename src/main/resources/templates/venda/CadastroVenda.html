@@ -32,6 +32,7 @@
 		
 			<input type="hidden" id="uuid" th:field="*{uuid}"/>
 			<input type="hidden" th:field="*{codigo}"/>
+			<input type="hidden" th:field="*{usuario}"/>
 			
 			<div class="row">
 				<div class="col-sm-4">
@@ -79,7 +80,8 @@
 				      <input id="codigoCliente" type="hidden" th:field="*{cliente}"/>
 				      <span class="input-group-btn">
 				        <button class="btn  btn-default  js-tooltip" type="button" title="Pesquisa avançada"
-				        		data-toggle="modal" data-target="#pesquisaRapidaClientes" >
+				        		data-toggle="modal" data-target="#pesquisaRapidaClientes" 
+				        		th:disabled="${venda.salvarProibido}">
 				        	<i class="glyphicon  glyphicon-search"></i>
 				        </button>
 				      </span>
@@ -90,7 +92,9 @@
 					<label class="control-label" for="valorFrete">Valor do frete</label>
 					<div class="input-group">
 	      				<div class="input-group-addon">R$</div> 
-						<input type="text" maxlength="14" class="form-control  js-decimal" id="valorFrete" th:field="*{valorFrete}" data:valor="${valorFrete}"/>
+						<input type="text" maxlength="14" class="form-control  js-decimal" id="valorFrete" 
+						th:field="*{valorFrete}" data:valor="${valorFrete}" 
+						th:disabled="${venda.salvarProibido}"/>
 					</div>
 				</div>
 				
@@ -98,7 +102,9 @@
 					<label class="control-label" for="valorDesconto">Valor do desconto</label>
 					<div class="input-group">
 	      				<div class="input-group-addon">R$</div> 
-						<input type="text" maxlength="14" class="form-control  js-decimal" id="valorDesconto" th:field="*{valorDesconto}" data:valor="${valorDesconto}"/>
+						<input type="text" maxlength="14" class="form-control  js-decimal" id="valorDesconto" 
+						th:field="*{valorDesconto}" data:valor="${valorDesconto}" 
+						th:disabled="${venda.salvarProibido}"/>
 					</div>
 				</div>
 			</div>
@@ -119,7 +125,7 @@
 						<div class="form-group  col-lg-12">
 							<input type="text" class="form-control  js-sku-nome-cerveja-input" id="cerveja" 
 								placeholder="Pesquise e adicione a cerveja pelo SKU ou nome" autofocus="autofocus" 
-								data:url="@{/cervejas}"/>
+								data:url="@{/cervejas}" th:disabled="${venda.salvarProibido}"/>
 						</div>
 					</div>
 					
@@ -132,25 +138,28 @@
 					<div class="row">
 						<div class="form-group  col-sm-3" brewer:classforerror="dataEntrega">
 							<label class="control-label" for="dataEntrega">Data da entrega</label>
-							<input type="text" class="form-control" id="dataEntrega" th:field="*{dataEntrega}"/>
+							<input type="text" class="form-control" id="dataEntrega" th:field="*{dataEntrega}"
+							th:disabled="${venda.salvarProibido}"/>
 						</div>
 						
 						<div class="form-group  col-sm-3">
 							<label class="control-label" for="horarioEntrega">Horário de entrega</label>
-							<input type="text" class="form-control" id="horarioEntrega" th:field="*{horarioEntrega}"/>
+							<input type="text" class="form-control" id="horarioEntrega" th:field="*{horarioEntrega}"
+							th:disabled="${venda.salvarProibido}"/>
 						</div>
 					</div>
 					
 					<div class="row">
 						<div class="form-group  col-sm-12">
 							<textarea class="form-control" id="dataEntrega" rows="5" 
-								placeholder="Alguma observação para o entregador desse pedido?" th:field="*{observacao}"></textarea>
+								placeholder="Alguma observação para o entregador desse pedido?" 
+								th:field="*{observacao}" th:disabled="${venda.salvarProibido}"></textarea>
 						</div>
 					</div>
 				</div>
 			</div>
 			
-			<div class="row" style="clear: both">
+			<div class="row" style="clear: both" th:if="${venda.salvarPermitido}">
 				<div class="col-lg-12">
 					<div class="btn-group">
 					  <button type="submit" class="btn  btn-primary  js-submit-btn" data:acao="salvar">Salvar</button>
@@ -164,7 +173,8 @@
 					  </ul>
 					</div>
 				
-					<button class="btn  btn-danger">Cancelar</button>
+					<button class="btn  btn-danger js-submit-btn" data:acao="cancelar"
+					th:unless="${venda.nova}">Cancelar</button>
 				</div>
 			</div>
 		</form>
