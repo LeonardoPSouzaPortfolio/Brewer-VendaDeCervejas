@@ -17,7 +17,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-10">
-					<h1>Cadastro de usuário</h1>
+					<h1 th:if="${usuario.novo}">Cadastro de usuário</h1>
+					<h1 th:unless="${usuario.novo}">Edição de usuário - [[${usuario.nome}]]</h1>
 				</div>
 			
 				<div class="col-xs-2">
@@ -32,8 +33,11 @@
 	</div>
 	
 	<div class="container-fluid">
-		<form method="POST" th:object="${usuario}" th:action="@{/usuarios/novo}">
+		<form method="POST" th:object="${usuario}" 
+				th:action="${usuario.novo} ? @{/usuarios/novo} : @{/usuarios/{codigo}(codigo=${usuario.codigo})}">
 			<brewer:message/>
+			
+			<input type="hidden" th:field="*{codigo}"/>
 			
 			<div class="row">
 				<div class="form-group  col-sm-12  bw-required" brewer:classforerror="nome">
@@ -65,7 +69,7 @@
 					<input type="password" class="form-control" id="confirmacaoSenha" th:field="*{confirmacaoSenha}"/>
 				</div>
 				
-				<div class="form-group  col-sm-3">
+				<div class="form-group  col-sm-3" th:if="${#authentication.principal.usuario.codigo != usuario.codigo}">
 					<label class="control-label">Status</label>
 					<div>
 						<input type="checkbox" class="js-status" data-size="small" data-off-color="danger" 
