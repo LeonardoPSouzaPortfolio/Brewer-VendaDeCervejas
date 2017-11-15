@@ -29,6 +29,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.LeonardoPSouzaPortfolio.brewer.controller.page.PageWrapper;
 import br.com.LeonardoPSouzaPortfolio.brewer.controller.validator.VendaValidator;
 import br.com.LeonardoPSouzaPortfolio.brewer.dto.VendaMes;
+import br.com.LeonardoPSouzaPortfolio.brewer.dto.VendaOrigem;
 import br.com.LeonardoPSouzaPortfolio.brewer.mail.Mailer;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.Cerveja;
 import br.com.LeonardoPSouzaPortfolio.brewer.model.ItemVenda;
@@ -189,6 +190,11 @@ public class VendasController {
 	public @ResponseBody List<VendaMes> listarTotalVendaPorMes() {
 		return vendas.totalPorMes();
 	}
+	
+	@GetMapping("/porOrigem")
+	public @ResponseBody List<VendaOrigem> vendasPorNacionalidade() {
+		return this.vendas.totalPorOrigem();
+}
 	
 	private ModelAndView mvTabelaItensVenda(String uuid) {
 		ModelAndView mv = new ModelAndView("venda/TabelaItensVenda");
