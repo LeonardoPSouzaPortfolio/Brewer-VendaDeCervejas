@@ -52,4 +52,9 @@ public class CadastroUsuarioService {
 		statusUsuario.executar(codigos, usuarios);
 	}
 	
+	@Transactional
+	public void excluir(Long codigo) {
+		usuarios.delete(codigo);
+	}
+	
 }

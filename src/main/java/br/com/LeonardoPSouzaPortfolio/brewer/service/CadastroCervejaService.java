@@ -47,6 +47,6 @@ public class CadastroCervejaService {
 			throw new ImpossivelExcluirEntidadeException("Impossível apagar cerveja. Já foi usada em alguma venda.");
 		}
 		
-	}
+		}
 	
 }

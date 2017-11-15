@@ -69,10 +69,13 @@
 						<td th:text="${cidade.nome}"></td>
 						<td class="text-right" th:text="${cidade.estado.nome}">São Paulo</td>
 						<td class="text-center" sec:authorize="hasRole('ROLE_CADASTRAR_CIDADE')">
-							<a class="btn  btn-link  btn-xs" title="Editar"> 
+							<a class="btn  btn-link  btn-xs js-tooltip" title="Editar" 
+									th:href="@{/cidades/{codigo}(codigo=${cidade.codigo})}"> 
 								<i class="glyphicon glyphicon-pencil"></i>
 							</a>
-							<a class="btn  btn-link  btn-xs" title="Excluir">
+							<a class="btn  btn-link  btn-xs js-tooltip js-exclusao-btn" title="Excluir" href="#" 
+									data:url="@{/cidades/{codigo}(codigo=${cidade.codigo})}"
+									data:objeto="${cidade.nome}">
 								<i class="glyphicon glyphicon-remove"></i>
 							</a>
 						</td>

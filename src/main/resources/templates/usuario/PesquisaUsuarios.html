@@ -116,7 +116,9 @@
 									th:href="@{/usuarios/{codigo}(codigo=${usuario.codigo})}"> 
 								<i class="glyphicon glyphicon-pencil"></i>
 							</a>
-							<a class="btn  btn-link  btn-xs" title="Excluir">
+							<a class="btn  btn-link  btn-xs js-tooltip js-exclusao-btn" title="Excluir" href="#" 
+									data:url="@{/usuarios/{codigo}(codigo=${usuario.codigo})}"
+									data:objeto="${usuario.nome}">
 								<i class="glyphicon glyphicon-remove"></i>
 							</a>
 						</td>

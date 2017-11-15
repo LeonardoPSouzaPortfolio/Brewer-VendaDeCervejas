@@ -3,6 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout/LayoutPadrao}"
+	xmlns:data="http://www.thymeleaf.org/extras/data"
 	xmlns:brewer="https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas">
 	
 <head>
@@ -58,10 +59,13 @@
 						<td class="text-center" th:text="${estilo.codigo}">1</td>
 						<td th:text="${estilo.nome}">Pale Lager</td>
 						<td class="text-center">
-							<a class="btn  btn-link  btn-xs" title="Editar"> 
+							<a class="btn  btn-link  btn-xs js-tooltip" title="Editar" 
+									th:href="@{/estilos/{codigo}(codigo=${estilo.codigo})}"> 
 								<i class="glyphicon glyphicon-pencil"></i>
 							</a>
-							<a class="btn  btn-link  btn-xs" title="Excluir">
+							<a class="btn  btn-link  btn-xs js-tooltip js-exclusao-btn" title="Excluir" href="#" 
+									data:url="@{/estilos/{codigo}(codigo=${estilo.codigo})}"
+									data:objeto="${estilo.nome}">
 								<i class="glyphicon glyphicon-remove"></i>
 							</a>
 						</td>

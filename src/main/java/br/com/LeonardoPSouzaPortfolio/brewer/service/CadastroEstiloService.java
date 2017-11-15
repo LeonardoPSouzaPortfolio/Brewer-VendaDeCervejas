@@ -25,5 +25,10 @@ public class CadastroEstiloService {
 		
 		return estilos.saveAndFlush(estilo);
 	}
+
+	@Transactional
+	public void excluir(Long codigo) {
+		estilos.delete(codigo);
+	}
 	
 }

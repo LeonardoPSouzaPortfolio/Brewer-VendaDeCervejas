@@ -45,6 +45,10 @@ public class Estilo implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public boolean isNovo() {
+		return codigo == null;
+	}
 
 	@Override
 	public int hashCode() {

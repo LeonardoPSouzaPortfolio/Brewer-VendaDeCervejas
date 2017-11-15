@@ -72,10 +72,13 @@
 						<td class="text-right" th:text="${cliente.telefone}">(11) 99999-9999</td>
 						<td class="text-right" th:text="${cliente.endereco.nomeCidadeSiglaEstado}"></td>
 						<td class="text-center">
-							<a class="btn  btn-link  btn-xs" title="Editar"> 
+							<a class="btn  btn-link  btn-xs js-tooltip" title="Editar" 
+									th:href="@{/clientes/{codigo}(codigo=${cliente.codigo})}"> 
 								<i class="glyphicon glyphicon-pencil"></i>
 							</a>
-							<a class="btn  btn-link  btn-xs" title="Excluir">
+							<a class="btn  btn-link  btn-xs js-tooltip js-exclusao-btn" title="Excluir" href="#" 
+									data:url="@{/clientes/{codigo}(codigo=${cliente.codigo})}"
+									data:objeto="${cliente.nome}">
 								<i class="glyphicon glyphicon-remove"></i>
 							</a>
 						</td>

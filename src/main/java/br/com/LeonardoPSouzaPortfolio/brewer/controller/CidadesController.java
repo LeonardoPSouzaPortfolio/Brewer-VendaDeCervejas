@@ -11,9 +11,12 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,6 +30,7 @@ import br.com.LeonardoPSouzaPortfolio.brewer.repository.Cidades;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.Estados;
 import br.com.LeonardoPSouzaPortfolio.brewer.repository.filter.CidadeFilter;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.CadastroCidadeService;
+import br.com.LeonardoPSouzaPortfolio.brewer.service.exception.ImpossivelExcluirEntidadeException;
 import br.com.LeonardoPSouzaPortfolio.brewer.service.exception.NomeCidadeJaCadastradaException;
 
 @Controller
@@ -59,7 +63,7 @@ public class CidadesController {
 		return cidades.findByEstadoCodigo(codigoEstado);
 	}
 	
-	@PostMapping("/nova")
+	@PostMapping({ "/nova", "{\\+d}" })
 	@CacheEvict(value = "cidades", key = "#cidade.estado.codigo", condition = "#cidade.temEstado()")
 	public ModelAndView salvar(@Valid Cidade cidade, BindingResult result, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
@@ -87,6 +91,24 @@ public class CidadesController {
 				, httpServletRequest);
 		mv.addObject("pagina", paginaWrapper);
 		return mv;
+	}
+	
+	@GetMapping("/{codigo}")
+	public ModelAndView editar(@PathVariable Long codigo) {
+		Cidade cidade = cidades.buscarComEstados(codigo);
+		ModelAndView mv = nova(cidade);
+		mv.addObject(cidade);
+		return mv;
+	}
+	
+	@DeleteMapping("/{codigo}")
+	public @ResponseBody ResponseEntity<?> excluir(@PathVariable("codigo") Long codigo) {
+		try {
+			cadastroCidadeService.excluir(codigo);
+		}catch (ImpossivelExcluirEntidadeException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+		return ResponseEntity.ok().build();
 	}
 	
 }
