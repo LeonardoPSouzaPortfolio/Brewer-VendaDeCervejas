@@ -119,7 +119,7 @@
 						<td th:text="${cerveja.nome}">Cerveja Stella</td>
 						<td th:text="${cerveja.estilo.nome}">Lager</td>
 						<td th:text="${cerveja.origem.descricao}">Internacional</td>
-						<td class="text-right" th:text="|R$ ${cerveja.valor}|">R$ 8.00</td>
+						<td class="text-right" th:text="|R$ ${{cerveja.valor}}|">R$ 8.00</td>
 						<td class="text-center">
 							<a class="btn  btn-link  btn-xs js-tooltip" title="Editar" 
 									th:href="@{/cervejas/{codigo}(codigo=${cerveja.codigo})}">
