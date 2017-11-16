@@ -18,8 +18,11 @@ Brewer.GraficoVendaPorMes = (function() {
 		var meses = [];
 		var valores = [];
 		vendaMes.forEach(function(obj) {
-			meses.unshift(obj.mes);
-			valores.unshift(obj.total);
+			if (meses.length <= 5 && valores.length <= 5) {
+				meses.unshift(obj.mes);
+				valores.unshift(obj.total);
+			}
+			
 		});
 		
 		var graficoVendasPorMes = new Chart(this.ctx, {
@@ -61,9 +64,11 @@ Brewer.GraficoVendaPorOrigem = (function() {
 		var cervejasInternacionais = [];
 		
 		vendaOrigem.forEach(function(obj) {
-			meses.unshift(obj.mes);
-			cervejasNacionais.unshift(obj.totalNacional);
-			cervejasInternacionais.unshift(obj.totalInternacional)
+			if (cervejasNacionais.length <= 5 && cervejasInternacionais.length <= 5) {
+				meses.unshift(obj.mes);
+				cervejasNacionais.unshift(obj.totalNacional);
+				cervejasInternacionais.unshift(obj.totalInternacional)
+			}
 		});
 		
 		var graficoVendasPorOrigem = new Chart(this.ctx, {

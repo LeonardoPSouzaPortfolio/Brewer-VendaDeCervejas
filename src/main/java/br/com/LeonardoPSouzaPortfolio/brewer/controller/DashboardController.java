@@ -11,7 +11,7 @@ import br.com.LeonardoPSouzaPortfolio.brewer.repository.Vendas;
 
 @Controller
 public class DashboardController {
-	
+
 	@Autowired
 	private Vendas vendas;
 	
@@ -20,7 +20,7 @@ public class DashboardController {
 	
 	@Autowired
 	private Clientes clientes;
-
+	
 	@GetMapping("/")
 	public ModelAndView dashboard() {
 		ModelAndView mv = new ModelAndView("Dashboard");
@@ -31,6 +31,7 @@ public class DashboardController {
 		
 		mv.addObject("valorItensEstoque", cervejas.valorItensEstoque());
 		mv.addObject("totalClientes", clientes.count());
+		
 		return mv;
 	}
 	

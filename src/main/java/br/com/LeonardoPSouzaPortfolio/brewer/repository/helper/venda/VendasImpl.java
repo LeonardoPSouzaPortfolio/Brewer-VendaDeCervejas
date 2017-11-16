@@ -64,33 +64,31 @@ public class VendasImpl implements VendasQueries {
 	
 	@Override
 	public BigDecimal valorTotalNoAno() {
-		Optional<BigDecimal> optional = Optional.ofNullable(manager.createQuery(
-				"select sum(valorTotal) from Venda where year(dataCriacao) = :ano and status = :status"
-				, BigDecimal.class)
-				.setParameter("ano", Year.now().getValue())
-				.setParameter("status", StatusVenda.EMITIDA)
-				.getSingleResult());
+		Optional<BigDecimal> optional = Optional.ofNullable(
+				manager.createQuery("select sum(valorTotal) from Venda where year(dataCriacao) = :ano and status = :status", BigDecimal.class)
+					.setParameter("ano", Year.now().getValue())
+					.setParameter("status", StatusVenda.EMITIDA)
+					.getSingleResult());
 		return optional.orElse(BigDecimal.ZERO);
 	}
 	
 	@Override
 	public BigDecimal valorTotalNoMes() {
-		Optional<BigDecimal> optional = Optional.ofNullable(manager.createQuery(
-				"select sum(valorTotal) from Venda where month(dataCriacao) = :mes and status = :status"
-				, BigDecimal.class)
-				.setParameter("mes", MonthDay.now().getMonthValue())
-				.setParameter("status", StatusVenda.EMITIDA).getSingleResult());
+		Optional<BigDecimal> optional = Optional.ofNullable(
+				manager.createQuery("select sum(valorTotal) from Venda where month(dataCriacao) = :mes and status = :status", BigDecimal.class)
+					.setParameter("mes", MonthDay.now().getMonthValue())
+					.setParameter("status", StatusVenda.EMITIDA)
+					.getSingleResult());
 		return optional.orElse(BigDecimal.ZERO);
 	}
 	
 	@Override
 	public BigDecimal valorTicketMedioNoAno() {
-		Optional<BigDecimal> optional = Optional.ofNullable(manager.createQuery(
-				"select sum(valorTotal)/count(*) from Venda where year(dataCriacao) = :ano and status = :status"
-				, BigDecimal.class)
-				.setParameter("ano", Year.now().getValue())
-				.setParameter("status", StatusVenda.EMITIDA)
-				.getSingleResult());
+		Optional<BigDecimal> optional = Optional.ofNullable(
+				manager.createQuery("select sum(valorTotal)/count(*) from Venda where year(dataCriacao) = :ano and status = :status", BigDecimal.class)
+					.setParameter("ano", Year.now().getValue())
+					.setParameter("status", StatusVenda.EMITIDA)
+					.getSingleResult());
 		return optional.orElse(BigDecimal.ZERO);
 	}
 	
@@ -121,7 +119,6 @@ public class VendasImpl implements VendasQueries {
 		LocalDate now = LocalDate.now();
 		for (int i = 1; i <= 6; i++) {
 			String mesIdeal = String.format("%d/%02d", now.getYear(), now.getMonth().getValue());
-			
 			boolean possuiMes = vendasNacionalidade.stream().filter(v -> v.getMes().equals(mesIdeal)).findAny().isPresent();
 			if (!possuiMes) {
 				vendasNacionalidade.add(i - 1, new VendaOrigem(mesIdeal, 0, 0));
