@@ -74,6 +74,9 @@
 	</properties>
 
 	<build>
+	
+		<finalName>${artifactId}</finalName>
+		
 		<plugins>
 			<!-- Plugins de copilação do Maven -->
 			<plugin>
