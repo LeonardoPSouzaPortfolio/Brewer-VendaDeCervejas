@@ -35,10 +35,10 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Nome é obrigatório")
+	@NotBlank
 	private String nome;
 
-	@NotBlank(message = "E-mail é obrigatório")
+	@NotBlank
 	@Email(message = "E-mail inválido")
 	private String email;
 
@@ -49,7 +49,7 @@ public class Usuario implements Serializable {
 
 	private Boolean ativo;
 
-	@Size(min = 1, message = "Selecione pelo menos um grupo")
+	@Size(min = 1)
 	@ManyToMany
 	@JoinTable(name = "usuario_grupo", joinColumns = @JoinColumn(name = "codigo_usuario")
 				, inverseJoinColumns = @JoinColumn(name = "codigo_grupo"))	

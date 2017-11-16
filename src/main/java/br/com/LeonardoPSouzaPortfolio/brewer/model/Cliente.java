@@ -39,15 +39,15 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Nome é obrigatório")
+	@NotBlank
 	private String nome;
 
-	@NotNull(message = "Tipo pessoa é obrigatório")
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	@Column(name = "tipo_pessoa")
 	private TipoPessoa tipoPessoa;
 
-	@NotBlank(message = "CPF/CNPJ é obrigatório")
+	@NotBlank
 	@CPF(groups = CpfGroup.class)
 	@CNPJ(groups = CnpjGroup.class)
 	@Column(name = "cpf_cnpj")
@@ -55,7 +55,7 @@ public class Cliente implements Serializable {
 
 	private String telefone;
 
-	@Email(message = "E-mail inválido")
+	@Email
 	private String email;
 
 	@JsonIgnore
