@@ -30,7 +30,7 @@ Brewer.GraficoVendaPorMes = (function() {
 		    data: {
 		    	labels: meses,
 		    	datasets: [{
-		    		label: 'Vendas por mês',
+		    		label: 'Venda por mês',
 		    		backgroundColor: "rgba(26,179,148,0.5)",
 	                pointBorderColor: "rgba(26,179,148,1)",
 	                pointBackgroundColor: "#fff",

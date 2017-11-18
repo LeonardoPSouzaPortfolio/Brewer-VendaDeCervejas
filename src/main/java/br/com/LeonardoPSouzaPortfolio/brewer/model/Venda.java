@@ -26,9 +26,10 @@ import javax.persistence.Transient;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-@DynamicUpdate
+
 @Entity
 @Table(name = "venda")
+@DynamicUpdate
 public class Venda {
 
 	@Id

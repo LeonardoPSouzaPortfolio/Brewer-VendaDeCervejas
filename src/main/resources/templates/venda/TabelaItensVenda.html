@@ -25,7 +25,7 @@
 			<div class="bw-tabela-cerveja-valor-grande">R$[[${{item.valorTotal}}]]</div>
 		</div>
 		
-		<div class="bw-tabela-item__painel-exclusao" th:if="${venda != null ? venda.salvarPermitido : false}">
+		<div class="bw-tabela-item__painel-exclusao" th:if="${venda != null ? venda.salvarPermitido : true}">
 			<span class="bw-tabela-item__titulo-exclusao">Excluir este item da venda?</span>
 			<button type="button" class="btn  btn-danger  js-exclusao-item-btn"
 				data:codigo-cerveja="${item.cerveja.codigo}">Sim, excluir!</button>

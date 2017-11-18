@@ -52,7 +52,7 @@ class TabelaItensVenda {
 				.findAny().getAsInt();
 		itens.remove(indice);
 	}
-	
+
 	public int total() {
 		return itens.size();
 	}

@@ -26,7 +26,7 @@
 						<i class="fa  fa-heartbeat  fa-3x"></i>
 					</div>
 					<div class="aw-box__value">R$[[${{valorItensEstoque.valor}}]]</div>
-					<div class="aw-box__title">Valor do estoque</div>
+					<div class="aw-box__title" th:text="#{dashboard.valorEstoque}">Valor do estoque</div>
 				</div>
 			</div>
 			
@@ -36,7 +36,7 @@
 						<i class="fa  fa-hashtag  fa-3x"></i>
 					</div>
 					<div class="aw-box__value" th:text="${valorItensEstoque.totalItens}">123</div>
-					<div class="aw-box__title">Itens no estoque</div>
+					<div class="aw-box__title" th:text="#{dashboard.itemEstoque}">Itens no estoque</div>
 				</div>
 			</div>
 			
@@ -46,7 +46,7 @@
 						<i class="fa  fa-users  fa-3x"></i>
 					</div>
 					<div class="aw-box__value" th:text="${totalClientes}">9</div>
-					<div class="aw-box__title">Total de clientes</div>
+					<div class="aw-box__title" th:text="#{dashboard.totalCliente}">Total de clientes</div>
 				</div>
 			</div>
 		</div>
@@ -58,7 +58,7 @@
 						<i class="fa  fa-usd  fa-3x"></i>
 					</div>
 					<div class="aw-box__value">R$[[${{vendasNoAno}}]]</div>
-					<div class="aw-box__title">Vendas no ano</div>
+					<div class="aw-box__title" th:text="#{dashboard.vendaAno}">Vendas no ano</div>
 				</div>
 			</div>
 			
@@ -68,7 +68,7 @@
 						<i class="fa  fa-signal  fa-3x"></i>
 					</div>
 					<div class="aw-box__value">R$[[${{vendasNoMes}}]]</div>
-					<div class="aw-box__title">Vendas no mês</div>
+					<div class="aw-box__title" th:text="#{dashboard.vendaMes}">Vendas no mês</div>
 				</div>
 			</div>
 			
@@ -78,7 +78,7 @@
 						<i class="fa  fa-shopping-cart  fa-3x"></i>
 					</div>
 					<div class="aw-box__value">R$[[${{ticketMedio}}]]</div>
-					<div class="aw-box__title">Ticket médio</div>
+					<div class="aw-box__title" th:text="#{dashboard.ticketMedio}">Ticket médio</div>
 				</div>
 			</div>
 		</div>
@@ -87,7 +87,9 @@
 			<div class="col-sm-6">
 				<div class="aw-graph-box">
 					<div class="aw-graph-box__header">
-						<h2 class="aw-graph-box__title">Vendas por mês <small>últimos 6 meses</small></h2>
+						<h2 class="aw-graph-box__title" >Vendas por mês 
+							<small>últimos 6 meses</small>
+						</h2>
 					</div>
 					<div class="aw-graph-box__content">
 						<!-- <div class="aw-graph-box__no-data">
@@ -104,7 +106,9 @@
 			<div class="col-sm-6">
 				<div class="aw-graph-box">
 					<div class="aw-graph-box__header">
-						<h2 class="aw-graph-box__title">Vendas por origem <small>últimos 6 meses</small></h2>
+						<h2 class="aw-graph-box__title" >Vendas por origem 
+							<small>últimos 6 meses</small>
+						</h2>
 					</div>
 					<div class="aw-graph-box__content">
 						<!-- <div class="aw-graph-box__no-data">
