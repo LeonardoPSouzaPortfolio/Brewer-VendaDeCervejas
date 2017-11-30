@@ -25,3 +25,38 @@
   </p> 
 </img>
 
+### 3. Tecnologias Utilizadas
+
+ - **Java** - Linguagem de programação utilizada para o desenvolvimento do sistema.
+ 
+ - **Spring Framework** - Frameworks responsável pela arquitetura MVC e seguranças com **BCrypt** no projeto. 
+
+ - **Thymeleaf** - Template engine do projeto responsável por transmitir dados para tela, construção de layout das telas.
+ 
+ - **JPA/Hibernate** - Utilizada a especificação do **JPA**  para persistência dos dados utilizando a implementação do **Hibernate**.
+ 
+ - **HTML 5 e CSS3** - Usada para codificação e estilização do projeto utilizando também a biblioteca CSS do **Bootstrap**.
+ 
+ - **Javascript** - Usada para interatividade com o usuário e controles dos dados do sistema.
+
+ - **Maven** - Para arquitetura inicial de projeto e controle de dependências.
+
+ - **Flyway** Para a utilização de banco de dados incremental.
+ 
+ - **MySql** - Linguagem de banco de dados utilizada banco de dados.
+
+ - **SLF4 e Log4j** Para controle dos log da aplicação.
+
+ - **Bean Validation e Hibernate Validator** - Usado validação de entidades e validações de campos.
+
+ - **Thumbnailator** - Para criação de thumbmail das imagens da cervejas.
+
+ - **JUnit** - Para teste unitários.
+
+ - **Java Mail** - Responsável pelos envio de e-mail utilizando serviço do **sendgrid**.
+
+ - **ChartJS** - Para geração de gráficos.
+ 
+ - **JasperReport** - Para geração de relatórios do sistema.
+
+ - **JasperReport** - Para geração de relatórios.
