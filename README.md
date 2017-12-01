@@ -173,3 +173,44 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
     <b>Figura 12 - Tela acesso negado</b> 
   </p> 
 </img>
+
+#### 5.3.3 Estoque
+&nbsp;&nbsp;&nbsp;&nbsp;O menu de estoque possui dois submenus “Estilos” e “Cervejas”.
+
+#### 5.3.3.1 Estilo
+&nbsp;&nbsp;&nbsp;&nbsp;No submenu “Estilos” figura 13, encontra-se a página de pesquisa de estilos com o campo de pesquisa de estilo e a tabela de registro de estilos tendo acima o botão “Novo estilo”. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;Na listagem de estilo na **figura 13** cada registro possui os íconea de edição e exclusão.
+
+<img src="https://uploaddeimagens.com.br/images/001/195/006/original/PesquisaEstilo.png?1512144452" alt="Tela de pesquisa de estilos" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 13 - Tela de pesquisa de estilos</b>
+  </p>
+</img>
+
+#### 5.3.3.1.1 Edição de estilo
+&nbsp;&nbsp;&nbsp;&nbsp;Na edição de estilo **figura 14**, encontra-se o campo de estilo preenchido com o dados do registro selecionado e o botão “Salvar” para alterar um novo “estilo”.
+
+<img src="https://uploaddeimagens.com.br/images/001/195/059/original/EdicaoEstilo.png?1512146347" alt="Tela de edição de estilo" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 14 - Tela de edição de estilo</b>
+  </p>
+</img>
+
+#### 5.3.3.1.2 Exclusão de estilo
+&nbsp;&nbsp;&nbsp;&nbsp;No ícone de exclusão de estilo abrirá uma caixa de diálogo com a confirmação se deseja excluir este estilo **figura 15**.
+
+<img src="https://uploaddeimagens.com.br/images/001/195/063/original/excluirEstiloConfirmacao.png?1512146422" alt="Tela de exclusão de estilo" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 15 - Tela de exclusão de estilo</b>
+  </p>
+</img>
+
+#### 5.3.3.1.3 Cadastro de estilo
+&nbsp;&nbsp;&nbsp;&nbsp;No Cadastro de estilos **figura 16**, encontra-se a página de cadastro de estilo com o campo de estilo e o botão “Salvar” para salvar um novo “estilo”.
+
+<img src="https://uploaddeimagens.com.br/images/001/195/070/original/CadastroEstilo.png?1512146563" alt="Tela de cadastro de estilo" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 16 - Tela de cadastro de estilo</b>
+  </p>
+</img>
