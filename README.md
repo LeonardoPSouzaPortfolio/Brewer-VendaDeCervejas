@@ -189,7 +189,7 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
 </img>
 
 #### 5.3.3.1.1 Edição de estilo
-&nbsp;&nbsp;&nbsp;&nbsp;Na edição de estilo **figura 14**, encontra-se o campo de estilo preenchido com o dados do registro selecionado e o botão “Salvar” para alterar um novo “estilo”.
+&nbsp;&nbsp;&nbsp;&nbsp;Na edição de estilo **figura 14**, encontra-se o campo de estilo preenchido com o dados do registro selecionado e o botão “Salvar” para alterar o “estilo”.
 
 <img src="https://uploaddeimagens.com.br/images/001/195/059/original/EdicaoEstilo.png?1512146347" alt="Tela de edição de estilo" title="Clique para ampliar">
   <p align="center">
@@ -225,7 +225,7 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
 </img>
 
 #### 5.3.3.2.1 Edição de cerveja
-&nbsp;&nbsp;&nbsp;&nbsp;Na edição de cerveja **figura 18**, encontra-se os campos preenchido com o dados do registro selecionado e o botão “Salvar” para alterar a nova “cerveja”.
+&nbsp;&nbsp;&nbsp;&nbsp;Na edição de cerveja **figura 18**, encontra-se os campos preenchido com o dados do registro selecionado e o botão “Salvar” para alterar a “cerveja”.
 
 <img src="https://uploaddeimagens.com.br/images/001/196/323/original/EdicaoCerveja.png?1512234723" alt="Tela de edição de cerveja" title="Clique para ampliar">
   <p align="center">
@@ -282,7 +282,7 @@ No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades
 </img>
 
 #### 5.3.4.1.1 Edição de cidade
-&nbsp;&nbsp;&nbsp;&nbsp;Na edição de cidade **figura 24**, encontra-se o formulário de cadastro de cidade preenchido com o dados do registro selecionado e o botão “Salvar” para alterar uma nova “cidade”.
+&nbsp;&nbsp;&nbsp;&nbsp;Na edição de cidade **figura 24**, encontra-se os campos preenchido com o dados do registro selecionado e o botão “Salvar” para alterar a “cidade”.
 
 <img src="https://uploaddeimagens.com.br/images/001/196/634/original/EdicaoCidade.png?1512254255" alt="Tela de edição de cidade" title="Clique para ampliar">
   <p align="center">
@@ -291,7 +291,7 @@ No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades
 </img>
 
 #### 5.3.4.1.2 Exclusão de cidade
-&nbsp;&nbsp;&nbsp;&nbsp;No ícone de exclusão de estilo abrirá uma caixa de diálogo com a confirmação se deseja excluir esta cidade **figura 25**.
+&nbsp;&nbsp;&nbsp;&nbsp;No ícone de exclusão de cidade abrirá uma caixa de diálogo com a confirmação se deseja excluir esta cidade **figura 25**.
 
 <img src="https://uploaddeimagens.com.br/images/001/196/636/original/ExclusaoCidade.png?1512254291" alt="Tela de exclusão de cidade" title="Clique para ampliar">
   <p align="center">
@@ -299,7 +299,7 @@ No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades
   </p>
 </img>
 
-#### 5.3.4.1.3 Cadastro de estilo
+#### 5.3.4.1.3 Cadastro de cidade
 &nbsp;&nbsp;&nbsp;&nbsp;No cadastro de cidades **figura 26**, encontra-se a página de cadastro de cidade com os campos do formulário de cidade e o botão “Salvar” para salvar uma nova “cidade”.
 
 <img src="https://uploaddeimagens.com.br/images/001/196/637/original/CadastroCidade.png?1512254328" alt="Tela de cadastro de cidade" title="Clique para ampliar">
@@ -307,3 +307,42 @@ No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades
     <b>Figura 26 - Tela de cadastro de cidade</b>
   </p>
 </img>
+
+#### 5.3.4.2 Clientes
+&nbsp;&nbsp;&nbsp;&nbsp;No submenu “Clientes” figura 27, encontra-se a página de pesquisa de clientes com os campos de pesquisa de clientes e a tabela de registro de clientes tendo acima o botão “Novo cliente”. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;Na listagem de cliente na **figura 27** cada registro possui um ícone de edição e outros de exclusão.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/658/original/PesquisaCliente.png?1512255999" alt="Tela de pesquisa de clientes" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 27 - Tela de pesquisa de clientes</b>
+  </p>
+</img>
+
+#### 5.3.4.2.1 Edição de cliente
+&nbsp;&nbsp;&nbsp;&nbsp;Na edição de cidade **figura 28**, encontra-se os campos preenchido com o dados do registro selecionado e o botão “Salvar” para alterar o “cliente”.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/661/original/edicaoCliente.png?1512256047" alt="Tela de edição de cliente" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 28 - Tela de edição de cliente</b>
+  </p>
+</img>
+
+#### 5.3.4.2.2 Exclusão de cliente
+&nbsp;&nbsp;&nbsp;&nbsp;No ícone de exclusão de cliente abrirá uma caixa de diálogo com a confirmação se deseja excluir esta cidade **figura 29**.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/662/original/exclusaoCliente.png?1512256091" alt="Tela de exclusão de cliente" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 29 - Tela de exclusão de cliente</b>
+  </p>
+</img>
+
+#### 5.3.4.2.3 Cadastro de cidade
+&nbsp;&nbsp;&nbsp;&nbsp;No cadastro de cidades **figura 30**, encontra-se a página de cadastro de cidade com os campos do formulário de cidade e o botão “Salvar” para salvar uma nova “cidade”.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/663/original/CadastroCliente.png?1512256127" alt="Tela de cadastro de cliente" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 30 - Tela de cadastro de cliente</b>
+  </p>
+</img>
+
