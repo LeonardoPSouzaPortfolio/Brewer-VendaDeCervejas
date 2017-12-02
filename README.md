@@ -207,7 +207,7 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
 </img>
 
 #### 5.3.3.1.3 Cadastro de estilo
-&nbsp;&nbsp;&nbsp;&nbsp;No Cadastro de estilos **figura 16**, encontra-se a página de cadastro de estilo com o campo de estilo e o botão “Salvar” para salvar um novo “estilo”.
+&nbsp;&nbsp;&nbsp;&nbsp;No cadastro de estilos **figura 16**, encontra-se a página de cadastro de estilo com o campo de estilo e o botão “Salvar” para salvar um novo “estilo”.
 
 <img src="https://uploaddeimagens.com.br/images/001/195/070/original/CadastroEstilo.png?1512146563" alt="Tela de cadastro de estilo" title="Clique para ampliar">
   <p align="center">
@@ -243,7 +243,7 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
 </img>
 
 #### 5.3.3.2.3 Cadastro de cerveja
-&nbsp;&nbsp;&nbsp;&nbsp;No Cadastro de cervejas **figura 20**, encontra-se a página de cadastro de cervejas com o formulário de preenchimento de cerveja e o botão “Salvar” para salvar uma nova “cerveja”.
+&nbsp;&nbsp;&nbsp;&nbsp;No cadastro de cervejas **figura 20**, encontra-se a página de cadastro de cervejas com o formulário de preenchimento de cerveja e o botão “Salvar” para salvar uma nova “cerveja”.
 
 <img src="https://uploaddeimagens.com.br/images/001/196/329/original/CadastroCerveja.png?1512235204" alt="Tela de cadastro de cerveja" title="Clique para ampliar">
   <p align="center">
@@ -264,5 +264,46 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
 <img src="https://uploaddeimagens.com.br/images/001/196/379/original/CadastroEstiloRapido.png?1512237860" alt="Caixa de diálogo de cadastro estilo rapido" title="Clique para ampliar">
   <p align="center">
     <b>Figura 22 - Caixa de diálogo de cadastro estilo rapido</b>
+  </p>
+</img>
+
+#### 5.3.4 Cadastro
+&nbsp;&nbsp;&nbsp;&nbsp;O menu de cadastro possui três submenus “Cidades”, “Cliente” e “Usuário”.
+
+#### 5.3.4.1 Cidades
+No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades com os campos de pesquisa de cidades e a tabela de registro de cidades tendo acima o botão “Nova cidade”. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;Na listagem de cidade na **figura 23** cada registro possui um ícone de edição e outros de exclusão.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/609/original/PesquisaCidade.png?1512252848" alt="Tela de pesquisa de cidades" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 23 - Tela de pesquisa de cidades</b>
+  </p>
+</img>
+
+#### 5.3.4.1.1 Edição de cidade
+&nbsp;&nbsp;&nbsp;&nbsp;Na edição de cidade **figura 24**, encontra-se o formulário de cadastro de cidade preenchido com o dados do registro selecionado e o botão “Salvar” para alterar uma nova “cidade”.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/634/original/EdicaoCidade.png?1512254255" alt="Tela de edição de cidade" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 24 - Tela de edição de cidade</b>
+  </p>
+</img>
+
+#### 5.3.4.1.2 Exclusão de cidade
+&nbsp;&nbsp;&nbsp;&nbsp;No ícone de exclusão de estilo abrirá uma caixa de diálogo com a confirmação se deseja excluir esta cidade **figura 25**.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/636/original/ExclusaoCidade.png?1512254291" alt="Tela de exclusão de cidade" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 25 - Tela de exclusão de cidade</b>
+  </p>
+</img>
+
+#### 5.3.4.1.3 Cadastro de estilo
+&nbsp;&nbsp;&nbsp;&nbsp;No cadastro de cidades **figura 26**, encontra-se a página de cadastro de cidade com os campos do formulário de cidade e o botão “Salvar” para salvar uma nova “cidade”.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/637/original/CadastroCidade.png?1512254328" alt="Tela de cadastro de cidade" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 26 - Tela de cadastro de cidade</b>
   </p>
 </img>
