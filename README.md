@@ -214,3 +214,55 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
     <b>Figura 16 - Tela de cadastro de estilo</b>
   </p>
 </img>
+
+#### 5.3.3.2 Cervejas
+&nbsp;&nbsp;&nbsp;&nbsp;No submenu “Cervejas” figura 17 , encontra-se a página de pesquisa de cervejas com os campos de pesquisa por  “SKU”, “Nome”, “Estilo”, “Sabor”, “Origem”,“Valor unitário” e a tabela de registro de cervejas tendo acima o botão “Nova Cerveja”. 
+
+<img src="https://uploaddeimagens.com.br/images/001/196/324/original/pesquisaCerveja.png?1512234781" alt="Tela de pesquisa de cervejas" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 17 - Tela de pesquisa de cervejas</b>
+  </p>
+</img>
+
+#### 5.3.3.2.1 Edição de cerveja
+&nbsp;&nbsp;&nbsp;&nbsp;Na edição de cerveja **figura 18**, encontra-se os campos preenchido com o dados do registro selecionado e o botão “Salvar” para alterar a nova “cerveja”.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/323/original/EdicaoCerveja.png?1512234723" alt="Tela de edição de cerveja" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 18 - Tela de edição de estilo</b>
+  </p>
+</img>
+
+#### 5.3.3.2.2 Exclusão de cerveja
+&nbsp;&nbsp;&nbsp;&nbsp;No ícone de exclusão de cerveja abrirá uma caixa de diálogo com a confirmação se deseja excluir esta cerveja **figura 19**.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/327/original/ExclusaoCerveja.png?1512234987" alt="Tela de exclusão de cerveja" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 19 - Tela de exclusão de cerveja</b>
+  </p>
+</img>
+
+#### 5.3.3.2.3 Cadastro de cerveja
+&nbsp;&nbsp;&nbsp;&nbsp;No Cadastro de cervejas **figura 20**, encontra-se a página de cadastro de cervejas com o formulário de preenchimento de cerveja e o botão “Salvar” para salvar uma nova “cerveja”.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/329/original/CadastroCerveja.png?1512235204" alt="Tela de cadastro de cerveja" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 20 - Tela de cadastro de cerveja</b>
+  </p>
+</img>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Caso tenha cadastrado uma cerveja sem foto ao salvar a cerveja será usada uma foto padrão para as cervejas sem foto. **Figura 21**.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/364/original/mock.png?1512237208" alt="Imagem para cervejas sem foto" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 21 - Imagem para cervejas sem foto</b>
+  </p>
+</img>
+
+&nbsp;&nbsp;&nbsp;&nbsp;É possível cadastrar um novo “estilo” clicando no ícone de (+) ao lado do campo “Estilo”. assim fazendo-o abrir uma caixa de diálogo **figura 22** para cadastrar um novo “estilo”. Após o cadastramento de um novo estilo o mesmo já vem selecionado na caixa de seleção de “Estilo”.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/379/original/CadastroEstiloRapido.png?1512237860" alt="Caixa de diálogo de cadastro estilo rapido" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 22 - Caixa de diálogo de cadastro estilo rapido</b>
+  </p>
+</img>
