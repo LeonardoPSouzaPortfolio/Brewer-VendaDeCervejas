@@ -346,3 +346,42 @@ No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades
   </p>
 </img>
 
+#### 5.3.4.3 Usuários
+&nbsp;&nbsp;&nbsp;&nbsp;No submenu “Usuários” figura 31, encontra-se a página de pesquisa de usuários com os campos de pesquisa de usuários e a tabela de registro de usuários tendo acima o botão “Novo Usuário”.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Na listagem de usuário na **figura 31** cada registro possui um ícone de edição e outros de exclusão.
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Observação:** nas caixas de seleções não é possível selecionar o caixa de seleção do usuário logado para evitar erros comuns de desativamento do usuário logado.
+
+<img src="https://uploaddeimagens.com.br/images/001/203/638/original/PesquisaUsuario.png?1512692371" alt="Tela de pesquisa de usuários" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 31 - Tela de pesquisa de usuários</b>
+  </p>
+</img>
+
+#### 5.3.4.3.1 Edição de usuário
+&nbsp;&nbsp;&nbsp;&nbsp;Na edição de usuário **figura 32**, encontra-se os campos preenchido com o dados do registro selecionado e o botão “Salvar” para alterar o “usuário”.
+
+<img src="https://uploaddeimagens.com.br/images/001/203/663/original/edicaoUsuario.png?1512694111" alt="Tela de edição de usuário" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 32 - Tela de edição de usuário</b>
+  </p>
+</img>
+
+#### 5.3.4.3.2 Exclusão de usuário
+&nbsp;&nbsp;&nbsp;&nbsp;No ícone de exclusão de usuário abrirá uma caixa de diálogo com a confirmação se deseja excluir este usuário **figura 33**.
+
+<img src="https://uploaddeimagens.com.br/images/001/196/662/original/exclusaoCliente.png?1512256091" alt="Tela de exclusão de usuário" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 33 - Tela de exclusão de usuário</b>
+  </p>
+</img>
+
+#### 5.3.4.3.3 Cadastro de usuário
+&nbsp;&nbsp;&nbsp;&nbsp;No cadastro de usuário **figura 34**, encontra-se a página de cadastro de usuário com os campos do formulário de usuários e o botão “Salvar” para salvar um novo “usuário”.
+
+<img src="https://uploaddeimagens.com.br/images/001/203/679/original/CadastroUsuario.png?1512694850" alt="Tela de cadastro de usuário" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 34 - Tela de cadastro de usuário</b>
+  </p>
+</img>
