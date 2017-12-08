@@ -105,6 +105,7 @@
     - Usuários
 - Relatórios
     - Vendas emitidas
+    
 #### 5.3.1 Dashboard
 &nbsp;&nbsp;&nbsp;&nbsp;A tela de “Dashboard” serão feitas o levantamento de algumas informações como “Valor do estoque”, “Itens no estoque”, “Total de clientes”, “Vendas no ano”, “Vendas no mês”, “Ticket médio” assim como dois gráficos, um mostrando a quantidades de vendas nos últimos 6 meses e o outro a quantidade de cervejas “Nacional” e “Internacional” vendidas. Como mostrado na **figura 5**.
 
@@ -112,7 +113,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;O menu de vendas possui dois submenus “Cadastro de venda” e “Pesquisa de vendas”.
 
 #### 5.3.2.1 Cadastro de venda
-No cadastro de venda encontra-se 3 caixas de informações “Total”, “Status” e “Criação” representando o valor total da compra, o status da compra se está em “Orçamento”, “Emitida” ou “Cancelada”. e a data de criação da compra. Abaixo temos o formulário da venda com os campos de pesquisa rápida de “Cliente”, entrada de “Valor do frete”, entrada de “Valor do desconto” e duas abas terminando o formulário. Mostrado na **figura 6**. 
+&nbsp;&nbsp;&nbsp;&nbsp;No cadastro de venda encontra-se 3 caixas de informações “Total”, “Status” e “Criação” representando o valor total da compra, o status da compra se está em “Orçamento”, “Emitida” ou “Cancelada”. e a data de criação da compra. Abaixo temos o formulário da venda com os campos de pesquisa rápida de “Cliente”, entrada de “Valor do frete”, entrada de “Valor do desconto” e duas abas terminando o formulário. Mostrado na **figura 6**. 
 
 <img src="https://uploaddeimagens.com.br/images/001/193/700/original/CadastroVenda.png?1512065012" alt="Tela de cadastro de venda" title="Clique para ampliar">
   <p align="center"> 
@@ -154,7 +155,7 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
   </p> 
 </img>
 
-**Observação:** todas as paginações do sistema são feitas no servidor, ou seja, são trafegadas somente uma determinada quantidade de registros do servidor fazendo-a assim trafegar menos dados do servidor deixando aplicação mais rápida e dinâmica.
+&nbsp;&nbsp;&nbsp;&nbsp;**Observação:** todas as paginações do sistema são feitas no servidor, ou seja, são trafegadas somente uma determinada quantidade de registros do servidor fazendo-a assim trafegar menos dados do servidor deixando aplicação mais rápida e dinâmica.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na listagem de venda na **figura 10** cada “venda” possui um ícone de edição onde pode-se fazer alteração da venda ou o cancelamento da venda. 
 
@@ -271,7 +272,7 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
 &nbsp;&nbsp;&nbsp;&nbsp;O menu de cadastro possui três submenus “Cidades”, “Cliente” e “Usuário”.
 
 #### 5.3.4.1 Cidades
-No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades com os campos de pesquisa de cidades e a tabela de registro de cidades tendo acima o botão “Nova cidade”. 
+&nbsp;&nbsp;&nbsp;&nbsp;No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades com os campos de pesquisa de cidades e a tabela de registro de cidades tendo acima o botão “Nova cidade”. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na listagem de cidade na **figura 23** cada registro possui um ícone de edição e outros de exclusão.
 
@@ -383,5 +384,26 @@ No submenu “Cidades” figura 23, encontra-se a página de pesquisa de cidades
 <img src="https://uploaddeimagens.com.br/images/001/203/679/original/CadastroUsuario.png?1512694850" alt="Tela de cadastro de usuário" title="Clique para ampliar">
   <p align="center">
     <b>Figura 34 - Tela de cadastro de usuário</b>
+  </p>
+</img>
+
+#### 5.3.5 Relatórios
+&nbsp;&nbsp;&nbsp;&nbsp;O menu de relatório possui apenas um submenus “Vendas emitidas”.
+
+#### 5.3.5.1 Vendas emitidas 
+&nbsp;&nbsp;&nbsp;&nbsp;No submenu “Vendas emitidas” figura 35, encontra-se a página de relatório de vendas emitidas com dois campos de datas para preencher os intervalos entre essas duas datas e o botão de “Emitir”.
+
+<img src="https://uploaddeimagens.com.br/images/001/203/708/original/PesquisaRelatorio.png?1512696589" alt="Tela de relatório de vendas emitidas" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 35 - Tela de relatório de vendas emitidas</b>
+  </p>
+</img>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Ao emitir o relatório de vendas emitidas o relatório irá abrir automaticamente, **figura 36**, exibindo os registros do filtro informado.
+
+
+<img src="https://uploaddeimagens.com.br/images/001/203/758/original/relatorioImpresso.png?1512698346" alt="Relatório emitido" title="Clique para ampliar">
+  <p align="center">
+    <b>Figura 36 - Relatório emitido</b>
   </p>
 </img>
