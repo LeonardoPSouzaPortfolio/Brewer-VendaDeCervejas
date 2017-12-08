@@ -1,3 +1,60 @@
+## Índice
+* [Introdução](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#brewer---venda-de-cervejas)
+* [1. Diagrama de Classe](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#1-diagrama-de-classe)
+* [2. Diagrama E-R - Modelo de banco de dados](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#2-diagrama-e-r---modelo-de-banco-de-dados)
+* [3. Tecnologias Utilizadas](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#3-tecnologias-utilizadas)
+* [4. Interface do sistema](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4-interface-do-sistema)
+  * [4.1 Login](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#41-login)
+    * [4.1.1 Erro ao logar](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#411-erro-ao-logar)
+  * [4.2 Tela Inicial](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#42-tela-inicial)
+  * [4.3 Menu Lateral](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43-menu-lateral)
+    * [4.3.1 Dashboard](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#431-dashboard)
+    * [4.3.2 Vendas](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#432-vendas)
+      * [4.3.2.1 Cadastro de venda](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4321-cadastro-de-venda)
+      * [4.3.2.2 Pesquisa de vendas](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4322-pesquisa-de-vendas)
+    * [4.3.3 Estoque](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#433-estoque)
+      * [4.3.3.1 Estilo](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4331-estilo)
+        * [4.3.3.1.1 Edição de estilo](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43311-edi%C3%A7%C3%A3o-de-estilo)
+        * [4.3.3.1.2 Exclusão de estilo](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43312-exclus%C3%A3o-de-estilo)
+        * [4.3.3.1.3 Cadastro de estilo](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43313-cadastro-de-estilo)
+      * [4.3.3.2 Cervejas](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4332-cervejas)
+        * [4.3.3.2.1 Edição de cerveja](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43321-edi%C3%A7%C3%A3o-de-cerveja)
+        * [4.3.3.2.2 Exclusão de cerveja](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43322-exclus%C3%A3o-de-cerveja)
+        * [4.3.3.2.3 Cadastro de cerveja](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43323-cadastro-de-cerveja)
+    * [4.3.4 Cadastro](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#434-cadastro)
+      * [4.3.4.1 Cidades](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4341-cidades)
+        * [4.3.4.1.1 Edição de cidade](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43411-edi%C3%A7%C3%A3o-de-cidade)
+        * [4.3.4.1.2 Exclusão de cidade](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43412-exclus%C3%A3o-de-cidade)
+        * [4.3.4.1.3 Cadastro de cidade](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43413-cadastro-de-cidade)
+      * [4.3.4.2 Clientes](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4342-clientes)
+        * [4.3.4.2.1 Edição de cliente](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43421-edi%C3%A7%C3%A3o-de-cliente)
+        * [4.3.4.2.2 Exclusão de cliente](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43422-exclus%C3%A3o-de-cliente)
+        * [4.3.4.2.3 Cadastro de cidade](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43423-cadastro-de-cidade)
+      * [4.3.4.3 Usuários](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4343-usu%C3%A1rios)
+        * [4.3.4.3.1 Edição de usuário](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43431-edi%C3%A7%C3%A3o-de-usu%C3%A1rio)
+        * [4.3.4.3.2 Exclusão de usuário](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43432-exclus%C3%A3o-de-usu%C3%A1rio)
+        * [4.3.4.3.3 Cadastro de usuário](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#43433-cadastro-de-usu%C3%A1rio)
+    * [4.3.5 Relatórios](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#435-relat%C3%B3rios)
+      * [4.3.5.1 Vendas emitidas](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#4351-vendas-emitidas)
+  * [4.4 Telas de informações](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#44-telas-de-informa%C3%A7%C3%B5es)
+    * [4.4.1 Acesso negado](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#441--acesso-negado)
+    * [4.4.2 Página não encontrada](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#442--p%C3%A1gina-n%C3%A3o-encontrada)
+    * [4.4.3 Página de erro no servidor](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#443--p%C3%A1gina-de-erro-no-servidor)
+    * [4.4.4 Página de sessão expirada](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#444--p%C3%A1gina-de-sess%C3%A3o-expirada)
+  * [4.5 Responsividade](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#45-responsividade)
+  * [4.6 Internacionalização](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#46-internacionaliza%C3%A7%C3%A3o)
+* [5 Segurança](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#5-seguran%C3%A7a)
+  * [5.1 Autenticação](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#51-autentica%C3%A7%C3%A3o)
+    * [5.1.1 BCrypt](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#511--bcrypt)
+  * [5.2 Autorização](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#52-autoriza%C3%A7%C3%A3o)
+  * [5.3 Cross-Site Request Forgery (CSRF)](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#53-cross-site-request-forgery-csrf)
+  * [5.4 Expiração de múltiplos login](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#54-expira%C3%A7%C3%A3o-de-m%C3%BAltiplos-login)
+  * [5.5 Duração de sessão](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#55-dura%C3%A7%C3%A3o-de-sess%C3%A3o)
+  * [5.6 SQL Injection](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#56-sql-injection)
+  * [5.7 Validação de formulário](https://github.com/LeonardoPSouzaPortfolio/Brewer-VendaDeCervejas#57-valida%C3%A7%C3%A3o-de-formul%C3%A1rio)
+
+-------------------------------
+
 # Brewer - Venda De Cervejas
 
 &nbsp;&nbsp;&nbsp;&nbsp;Brewer é um sistema online de vendas de cervejas responsivo para se adaptar a todos tipos de telas que tem como papel agilizar o processo de vendas de cerveja ou propondo ao cliente registrar um orçamento ou recebê-lo por e-mail para uma compra futura.
@@ -63,7 +120,7 @@
 ### 4. Interface do sistema
 &nbsp;&nbsp;&nbsp;&nbsp;Nesse tópico serão mostradas as principais telas do sistemas seguindo de suas funcionalidades.
  
-#### 4.1.1 Login
+#### 4.1 Login
 &nbsp;&nbsp;&nbsp;&nbsp;Inicialmente o sistema inicia na tela de “login” onde o vendedor irá entrar com seus dados de autenticação, como mostrado na **figura 3**.
 
 <img src="https://uploaddeimagens.com.br/images/001/193/663/original/login.png?1512063577" alt="Tela de login" title="Clique para ampliar">
@@ -72,7 +129,7 @@
   </p> 
 </img>
 
-#### 4.1.2 Erro ao logar
+#### 4.1.1 Erro ao logar
 &nbsp;&nbsp;&nbsp;&nbsp;Na figura 4 é mostrado a mensagem de falha ao tentar logar caso o vendedor informe seus dados incorretamente.
 
 <img src="https://uploaddeimagens.com.br/images/001/193/666/original/erroLogin.png?1512063670" alt="Mensagem de falha ao tentar logar" title="Clique para ampliar">
@@ -456,7 +513,7 @@ Pesquisando por quaisquer dos campos retornará a busca clicando no botão “Pe
   </p>
 </img>
 
-#### 4.5 Internacionalização
+#### 4.6 Internacionalização
 &nbsp;&nbsp;&nbsp;&nbsp;O sistema brewer possui internacionalização adaptada para duas línguas, sendo ela portugues e ingles. Na **figura 42** temos a tela do Dashboard do sistema toda na linguagem inglesa só trocando o idioma do navegador utilizado.
 
 <img src="https://uploaddeimagens.com.br/images/001/204/592/original/Internacionalizacao.png?1512760079" alt="Tela de Tela de Dashboard em inglês" title="Clique para ampliar">
